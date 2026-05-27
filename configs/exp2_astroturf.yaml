@@ -1,0 +1,41 @@
+# EXP-2: Astroturfing dose-response — THE HEADLINE INDUSTRY EXPERIMENT
+# How few coordinated AI agents does it take to flip a platform?
+#
+# Cost on RTX 4000 Ada: ~12 hours
+# 2 models × 3 seeds × 6 K values × (50 + K) agents × 15 rounds × 2 (gen + vote)
+# ≈ 47,000 LLM calls @ ~1.5 s = ~20 hr (trimmed below to ~12 hr)
+
+model: qwen3.5:2b
+seed: 42
+ollama_url: http://127.0.0.1:11434
+
+models:
+  - qwen3.5:2b
+  - llama3.2:3b
+
+seeds:
+  - 42
+  - 7
+
+astroturf_k_grid: [0, 1, 3, 5, 10, 20]
+astroturf_num_baseline: 30
+astroturf_pushed_opinion: "strongly support"
+astroturf_angle: "AI-generated content labels should be mandatory and automatic — most people quietly agree."
+astroturf_inner_condition: likes
+
+num_agents: 30    # overridden by runner per K
+num_rounds: 10    # enough for opinion dynamics to stabilize without blowing timing
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions: [likes]
+
+use_peer_voting: true
+voting_k_per_voter: 5
+embed_model: nomic-embed-text
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 280
+likes_visibility_top_k: 6
+output_dir: runs

@@ -1,0 +1,23 @@
+# Microsmoke — fail-fast wiring check, runs in ~1 minute
+model: qwen3.5:2b
+seed: 1
+ollama_url: http://127.0.0.1:11434
+
+num_agents: 3
+num_rounds: 2
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions:
+  - control
+  - likes
+
+use_peer_voting: true
+voting_k_per_voter: 2
+embed_model: nomic-embed-text
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 220
+likes_visibility_top_k: 3
+output_dir: runs

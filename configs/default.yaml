@@ -1,0 +1,30 @@
+# Default experiment config
+model: qwen3.5:2b           # Any installed Ollama model
+ollama_url: http://localhost:11434
+num_agents: 20
+num_rounds: 5
+topic: "Should AI-generated content be labeled on social platforms?"
+seed: 42
+
+# Conditions to run. Valid: control, likes, majority, leaderboard, downvote
+conditions:
+  - control
+  - likes
+  - majority
+  - leaderboard
+  - downvote
+
+# Generation
+temperature: 0.8
+max_tokens: 220
+request_timeout: 120
+
+# Post length cap (chars) used in the prompt
+post_char_limit: 280
+
+# Feedback knobs (kept simple)
+likes_visibility_top_k: 5     # How many top posts shown for likes/leaderboard
+downvote_threshold: 0.3       # Posts with lower-than-this similarity to majority get downvoted
+
+# Output
+output_dir: runs

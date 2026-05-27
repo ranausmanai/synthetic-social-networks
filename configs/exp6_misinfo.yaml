@@ -1,0 +1,41 @@
+# EXP-6: Misinformation cascade with intervention testing
+# Maps directly to platform policy levers: fact-check labels, deamplification, community-notes-style rebuttal.
+# Cost on RTX 4000 Ada: ~4 hours
+# 2 models × 3 seeds × 4 interventions × 25 agents × 12 rounds × 2 (gen + vote)
+# = 14,400 calls @ ~1.5s = ~6 hr
+
+model: qwen3.5:2b
+seed: 42
+ollama_url: http://127.0.0.1:11434
+
+models:
+  - qwen3.5:2b
+  - llama3.2:3b
+
+seeds:
+  - 42
+  - 7
+
+misinfo_interventions: [none, factcheck_label, deamplify, rebuttal]
+misinfo_seeder_id: a00
+misinfo_claim: "It has been confirmed that 90% of AI-labeling laws were drafted by AI labs themselves to suppress small competitors and concentrate the market."
+misinfo_claim_keywords: ["90%", "ai labs", "suppress"]
+misinfo_rebuttal: "Public records and bill-drafting trails are open; less than 4% of recent AI-labeling provisions cite AI-lab authorship and no peer-reviewed analysis supports the 90% claim."
+misinfo_inner_condition: likes
+
+num_agents: 20
+num_rounds: 10
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions: [likes]
+
+use_peer_voting: true
+voting_k_per_voter: 5
+embed_model: nomic-embed-text
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 280
+likes_visibility_top_k: 6
+output_dir: runs

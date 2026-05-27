@@ -1,0 +1,38 @@
+# EXP-1: Strengthened baseline — establish the peer-vote + embeddings + 20-round
+# numbers for the methodology section of the paper.
+# Cost on RTX 4000 Ada: ~10 hours
+# 2 models × 3 seeds × 5 conditions × 20 agents × 20 rounds × 2 (gen + vote) = 24,000 calls
+
+model: qwen3.5:2b
+seed: 42
+ollama_url: http://127.0.0.1:11434
+
+models:
+  - qwen3.5:2b
+  - llama3.2:3b
+
+seeds:
+  - 42
+  - 7
+
+num_agents: 20
+num_rounds: 15
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions:
+  - control
+  - likes
+  - majority
+  - leaderboard
+  - downvote
+
+use_peer_voting: true
+voting_k_per_voter: 5
+embed_model: nomic-embed-text
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 280
+likes_visibility_top_k: 5
+output_dir: runs

@@ -1,0 +1,31 @@
+# ANCHOR A2 — ChangeMyView human-replay calibration.
+#
+# Set cmv_data_path to a real CMV JSONL dump for actual calibration.
+# Without it, the runner uses a built-in 5-case synthetic dataset (warns loudly)
+# for pipeline verification only.
+#
+# Real data sources:
+#  - convokit (pip install convokit; download winning-args-corpus)
+#  - https://chenhaot.com/data/cmv/cmv.tar.bz2
+#  - Pushshift Reddit dumps (legal/availability varies)
+
+model: qwen3.5:2b
+seed: 42
+ollama_url: http://127.0.0.1:11434
+
+models:
+  - qwen3.5:2b
+  - llama3.2:3b
+
+seeds:
+  - 42
+
+# Path to a JSONL file with one CMV case per line. See human_replay.py docstring
+# for the expected schema. Leave empty/missing to use the built-in synthetic set.
+cmv_data_path:
+cmv_n_cases: 5     # cap; bump up once a real dataset is in place
+
+temperature: 0.7
+max_tokens: 240
+request_timeout: 180
+output_dir: runs

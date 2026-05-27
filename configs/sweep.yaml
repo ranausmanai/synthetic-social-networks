@@ -1,0 +1,36 @@
+# Multi-model, multi-seed sweep config.
+# Run: python -m src.run_experiment --sweep --config configs/sweep.yaml
+
+# Falls back to `model:` and `seed:` if `models:`/`seeds:` lists are absent.
+model: qwen3.5:2b
+seed: 42
+
+models:
+  - qwen3.5:2b      # Alibaba (small)
+  - llama3.2:3b     # Meta
+  - gemma4:e4b      # Google (slower; comment out if you want speed)
+
+seeds:
+  - 42
+  - 7
+  - 1337
+
+ollama_url: http://localhost:11434
+num_agents: 20
+num_rounds: 5
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions:
+  - control
+  - likes
+  - majority
+  - leaderboard
+  - downvote
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 280
+likes_visibility_top_k: 5
+downvote_threshold: 0.3
+output_dir: runs

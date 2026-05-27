@@ -1,0 +1,26 @@
+# ANCHOR A1 — Bandwagon calibration.
+# Single round per trial, fast. Cost: ~10 min on RTX 4000 Ada per (model, seed,
+# strength, side) trial. With defaults below: 2 models × 2 seeds × 3 strengths
+# × 2 sides = 24 trials × ~10 min = ~4 hr. Trimmed defaults below run in ~1.5 hr.
+
+model: qwen3.5:2b
+seed: 42
+ollama_url: http://127.0.0.1:11434
+
+models:
+  - qwen3.5:2b
+  - llama3.2:3b
+
+seeds:
+  - 42
+  - 7
+
+anchor_n_agents: 30
+anchor_bandwagon_strengths: [0.55, 0.75, 0.90]
+anchor_topic: "Should social-media platforms make it mandatory to label AI-generated content?"
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 240
+output_dir: runs

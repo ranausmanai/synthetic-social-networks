@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Experiment outputs (released separately on Hugging Face — see README.md)
+# Production posts + per-trial logs + embedding cache are all on HF.
+runs/
+run_logs/
+pod_artifacts/
+
+# Drafts not for public release
+CLAUDE.md
+paper-options.md
+HF_DATASET_CARD.md
+paper/paper_pdf.md

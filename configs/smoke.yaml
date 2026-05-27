@@ -1,0 +1,19 @@
+# Tiny config for smoke-testing the pipeline end-to-end
+model: qwen3.5:2b
+ollama_url: http://localhost:11434
+num_agents: 4
+num_rounds: 2
+topic: "Should AI-generated content be labeled on social platforms?"
+seed: 7
+
+conditions:
+  - control
+  - likes
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 120
+post_char_limit: 240
+likes_visibility_top_k: 3
+downvote_threshold: 0.3
+output_dir: runs

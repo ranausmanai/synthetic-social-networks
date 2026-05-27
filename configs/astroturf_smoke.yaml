@@ -1,0 +1,31 @@
+# Astroturf smoke — fail-fast for the EXP-2 code path. ~15 min.
+model: qwen3.5:2b
+seed: 1
+ollama_url: http://127.0.0.1:11434
+
+# Sweep dimensions
+models: [qwen3.5:2b]
+seeds: [1, 2]
+astroturf_k_grid: [0, 5]
+astroturf_num_baseline: 8
+astroturf_pushed_opinion: "strongly support"
+astroturf_angle: "AI-generated content labels should be mandatory and automatic — most people quietly agree."
+astroturf_inner_condition: likes
+
+# Inherited
+num_agents: 8      # baseline alone; injection happens via runner
+num_rounds: 5
+topic: "Should AI-generated content be labeled on social platforms?"
+
+conditions: [likes]
+
+use_peer_voting: true
+voting_k_per_voter: 4
+embed_model: nomic-embed-text
+
+temperature: 0.8
+max_tokens: 220
+request_timeout: 180
+post_char_limit: 240
+likes_visibility_top_k: 5
+output_dir: runs
