@@ -16,8 +16,7 @@
 > cache, the preregistered analysis plan (`PREREGISTRATION.md`), and the
 > framing document (`FRAMING.md`) are bundled with this submission. All
 > seven figures in this manuscript are rendered programmatically from
-> the released data via `paper/make_figures.py`; references have been
-> verified against their publishing venues.
+> the released data via `paper/make_figures.py`.
 
 ---
 
@@ -1130,10 +1129,7 @@ release-engineering follow-up but is not included in this submission.
 
 ---
 
-## References (verified)
-
-Each reference below has been confirmed via search against its publishing
-venue's record. No reference appears here that we could not verify.
+## References
 
 - Asch, S. E. (1956). Studies of independence and conformity: I. A minority
   of one against a unanimous majority. *Psychological Monographs: General
