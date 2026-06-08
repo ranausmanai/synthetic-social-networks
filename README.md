@@ -94,16 +94,16 @@ cd paper && pandoc paper.md \
 
 ## Citing
 
-> Usman, R. M. (2026). *Engagement Signals and Coordinated Crowds Reshape
-> LLM-Agent Discourse.* (Working paper.)
+> Usman, R. M. (2026). *AI-Agent Populations Reveal Engagement Signals
+> Suppress Minority Views and Coordination Beats Amplification.* (Working paper.)
 
 BibTeX:
 
 ```bibtex
 @misc{usman2026synthetic,
   author = {Usman, Rana Muhammad},
-  title  = {Engagement Signals and Coordinated Crowds Reshape
-            LLM-Agent Discourse},
+  title  = {AI-Agent Populations Reveal Engagement Signals Suppress
+            Minority Views and Coordination Beats Amplification},
   year   = {2026},
   url    = {https://github.com/ranausmanai/synthetic-social-networks},
   note   = {Working paper; dataset at

@@ -1,4 +1,4 @@
-# Engagement Signals and Coordinated Crowds Reshape LLM-Agent Discourse
+# AI-Agent Populations Reveal Engagement Signals Suppress Minority Views and Coordination Beats Amplification
 
 **Rana Muhammad Usman**
 
@@ -6,7 +6,7 @@
 
 *Correspondence:* `usmanashrafrana@gmail.com`
 
-*Manuscript date:* 2026-06-08
+*Manuscript date:* 2026-06-09
 
 ---
 
@@ -47,20 +47,20 @@ llama3.2:3b) and matched random seeds are tested. Results are contextualized
 against a derived human bandwagon-conformity reference range via a
 within-study anchor (A1).
 
-Three findings are reported (n=4 per cell). Standard social-reward UX alone
-is associated with a 6 to 16 percentage-point reduction in minority-opinion
-survival relative to a no-signal control, directionally consistent across
-both tested model families. Coordinated AI accounts produce a 50% strict
-opinion-flip rate only at the largest tested coordination ratio (K=20,
-approximately 40% of a 50-agent platform), while single-account
-amplification shows no coherent dose-response across visibility multipliers
-from 1x to 20x. Together these results constitute the Population-Driven
-Influence (PDI) hypothesis: opinion movement in our simulation is
-population-driven rather than amplification-driven. A fourth, methodological
-finding (paraphrase leakage) is also reported: keyword-based misinformation
-defenses miss thematic propagation because LLM agents paraphrase rather than
-copy seeded claims, breaking literal-keyword measurement and filtering
-approaches.
+Three empirical findings and one methodological observation are reported
+(n=4 per cell). Standard social-reward UX alone is associated with a 6 to
+16 percentage-point reduction in minority-opinion survival relative to a
+no-signal control, directionally consistent across both tested model
+families. Coordinated AI accounts produce a 50% strict opinion-flip rate
+only at the largest tested coordination ratio (K=20, approximately 40% of a
+50-agent platform), while single-account amplification shows no coherent
+dose-response across visibility multipliers from 1x to 20x. Together these
+results constitute the Population-Driven Influence (PDI) hypothesis:
+opinion movement in our simulation is population-driven rather than
+amplification-driven. The methodological observation, paraphrase leakage,
+is that keyword-based misinformation defenses miss thematic propagation
+because LLM agents paraphrase rather than copy seeded claims, breaking
+literal-keyword measurement and filtering approaches.
 
 The calibration anchor places simulated agents below our derived human
 bandwagon-conformity reference band (pooled rate 0.039 against a 10 to 20%
@@ -339,7 +339,7 @@ vote-trace logging, as the **peer-voted social simulation testbed
 
 ### 3.4 Metrics
 
-Six primary metrics computed per round and aggregated to scalars:
+Six primary metrics are computed per round and aggregated to scalars:
 
 - **majority fraction**, share of agents on the modal stance.
 - **persona retention**, mean cosine similarity (in `nomic-embed-text`
@@ -675,9 +675,9 @@ coordinated population.
 EXP-3 was **added post-preregistration** to test a distinct attack vector,
 single-account visibility amplification, that was not part of the original
 analysis plan. The preregistered H4 in our analysis plan pertains to
-persona-group vulnerability under social pressure (EXP-7) and is reported
-separately. We frame EXP-3 as an exploratory post-prereg experiment with the
-following hypothesis:
+persona-group vulnerability under social pressure and is not reported in
+this manuscript. We frame EXP-3 as an exploratory post-prereg experiment
+with the following hypothesis:
 
 *A single AI account with sufficient visibility amplification will produce
 honest-majority opinion shifts comparable to coordinated-population
@@ -691,9 +691,9 @@ At multipliers > 1, the influencer is force-included in every honest agent's
 `likes` feed *and* its effective like-rank is multiplied by the visibility
 multiplier (so even at low actual peer-vote counts it dominates the
 top-K). At 1× the influencer receives no special treatment and competes for
-top-K visibility on equal terms with the 30 baseline agents, the 1× cell
-therefore serves as a "boosting-off control" rather than a non-influencer-
-present control. We sweep the multiplier across {1, 3, 5, 10, 20}. 2 models
+top-K visibility on equal terms with the 30 baseline agents, so the 1× cell
+serves as a "boosting-off control" rather than an influencer-absent control.
+We sweep the multiplier across {1, 3, 5, 10, 20}. 2 models
 × 2 seeds × 5 multipliers = 20 trials total. Inner condition: `likes` with
 peer voting, 10 rounds.
 
@@ -1057,12 +1057,11 @@ spend non-trivial setup time on the Ollama side.
 
 ## 11. Conclusion
 
-This study yields two central claims within the limits of its design:
-platform feedback is itself an intervention, and coordinated populations
-shape LLM-agent discourse more reliably than amplified individuals. A third,
-methodological result shows why these dynamics are difficult to measure:
-LLM agents can preserve a claim's theme while changing its surface form,
-causing literal-keyword metrics and filters to miss propagation.
+This study yields three central claims within the limits of its design:
+platform feedback is itself an intervention; coordinated populations shape
+LLM-agent discourse more reliably than amplified individuals; and LLM-agent
+misinformation propagation cannot be measured reliably with literal keyword
+matching alone.
 
 1. **The Population-Driven Influence (PDI) hypothesis: in LLM-agent
    social platforms, influence is population-driven, not amplification-
@@ -1080,18 +1079,13 @@ causing literal-keyword metrics and filters to miss propagation.
    downvote), with no adversarial actor present (EXP-1). The pattern is
    directionally consistent across both tested model families.
 
-These theses sit on top of three more granular observations:
+Two design-specific results qualify these claims:
 
-1. **UX-driven diversity loss (EXP-1).** The presence of standard
-   social-reward UX alone (likes, visible majority, leaderboards, and
-   downvotes) is associated with reduced minority-opinion survival (by
-   6–16 percentage points relative to a no-signal control) in an
-   LLM-agent population, even with no adversarial actor present.
-2. **Coordination threshold (EXP-2).** Coordinated AI accounts produced
+1. **Coordination threshold (EXP-2).** Coordinated AI accounts produced
    a 50% strict opinion-flip rate only at K=20 (40% of the 50-agent
    total population, the highest K tested); the preregistered K\*/N at most
    0.20 magnitude expectation is *not* supported by this study.
-3. **Paraphrase leakage (EXP-6).** Of three standard moderation
+2. **Paraphrase leakage (EXP-6).** Of three standard moderation
    interventions tested, a *post-hoc* semantic-endorsement analysis
    (the preregistered keyword-based metric returned zero across all
    16 trials, because LLM agents paraphrased the seeded claim rather
@@ -1102,8 +1096,9 @@ These theses sit on top of three more granular observations:
    before any of these intervention rankings should be interpreted as
    effectiveness claims.
 
-A fourth experiment (EXP-3) returned a directional null / no-dose-response
-result: a single AI account with visibility multipliers from 1× to 20×
+The single-account amplification experiment (EXP-3) returned a directional
+null / no-dose-response result: a single AI account with visibility
+multipliers from 1× to 20×
 did not shift opinion in a coherent dose-response pattern in our setup
 (n=4 per multiplier), and showed weak backfire evidence on one model
 family. This is in tension with popular framings of "AI influencer" risk
