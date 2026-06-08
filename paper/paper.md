@@ -1,4 +1,4 @@
-# Synthetic Social Networks: When Routine Social-Reward UX Already Hurts, Coordinated AI Attacks Compound the Damage, and Single Amplified Accounts Fail
+# Engagement Signals and Coordinated Crowds Reshape LLM-Agent Discourse
 
 **Rana Muhammad Usman**
 
@@ -6,7 +6,7 @@
 
 *Correspondence:* `usmanashrafrana@gmail.com`
 
-*Manuscript date:* 2026-05-27
+*Manuscript date:* 2026-06-08
 
 ---
 
@@ -14,7 +14,10 @@
 > seeds, raw posts (24,160 production / 28,946 total including
 > pipeline-verification smoke runs), paired peer-vote logs, embedding
 > cache, the preregistered analysis plan (`PREREGISTRATION.md`), and the
-> framing document (`FRAMING.md`) are bundled with this submission. All
+> framing document (`FRAMING.md`) are released at
+> <https://github.com/ranausmanai/synthetic-social-networks> and
+> <https://huggingface.co/datasets/ranausmans/synthetic-social-networks>.
+> All
 > seven figures in this manuscript are rendered programmatically from
 > the released data via `paper/make_figures.py`.
 
@@ -40,9 +43,9 @@ social-reward signals without manipulation, coordinated-account astroturfing
 at varying ratios, single-account influence amplification at varying
 visibility multipliers, and seeded-misinformation cascades under four
 intervention regimes. Two open-weight model families (qwen3.5:2b,
-llama3.2:3b) and matched random seeds are tested. Results are calibrated
-against documented human bandwagon-conformity rates via a within-study
-anchor (A1).
+llama3.2:3b) and matched random seeds are tested. Results are contextualized
+against a derived human bandwagon-conformity reference range via a
+within-study anchor (A1).
 
 Three findings are reported (n=4 per cell). Standard social-reward UX alone
 is associated with a 6 to 16 percentage-point reduction in minority-opinion
@@ -56,11 +59,11 @@ Influence (PDI) hypothesis: opinion movement in our simulation is
 population-driven rather than amplification-driven. A fourth, methodological
 finding (paraphrase leakage) is also reported: keyword-based misinformation
 defenses miss thematic propagation because LLM agents paraphrase rather than
-copy seeded claims, breaking the most widely deployed measurement and
-filtering approaches.
+copy seeded claims, breaking literal-keyword measurement and filtering
+approaches.
 
-The calibration anchor places simulated agents below the documented human
-bandwagon-conformity band (pooled rate 0.039 against a 10 to 20% reference
+The calibration anchor places simulated agents below our derived human
+bandwagon-conformity reference band (pooled rate 0.039 against a 10 to 20%
 range), so reported magnitudes are presented as direction-of-effect within
 the simulation rather than as platform-percentage predictions; transfer to
 human populations remains uncalibrated and is identified as the
@@ -68,7 +71,9 @@ highest-priority follow-up. Code, configurations, fixed random seeds, the
 preregistered analysis plan, the framing document, and 24,160 in-character
 agent posts with paired peer-vote traces (28,946 total including
 pipeline-verification smoke runs) are released under MIT (code) and CC-BY
-4.0 (data).
+4.0 (data) at
+<https://github.com/ranausmanai/synthetic-social-networks> and
+<https://huggingface.co/datasets/ranausmans/synthetic-social-networks>.
 
 ---
 
@@ -85,22 +90,43 @@ multi-agent LLM systems (such as those built atop frameworks like OpenAI
 Swarm, Microsoft AutoGen, and CrewAI) increasingly support automated discourse
 agents whose behavior at population scale is poorly understood.
 
-As the LLM-agent fraction of platform users rises, operators face a question
-they cannot ethically resolve with live A/B testing on real users: **how
-vulnerable is the platform to manipulation when a meaningful fraction of users
-are LLM agents?** Closely related: **does the platform's standard UX already
-distort the discourse of a purely AI-driven population**, before any
-adversarial actor enters? And **which of the moderation interventions
-platforms currently deploy actually contain a cascade in such a population?**
+This creates a measurement problem for platform governance. The standard
+question, "can one influential account manipulate users?", is too narrow for
+LLM-heavy platforms. Operators also need to know whether ordinary engagement
+UX changes the population before any attacker appears; whether coordinated
+LLM accounts damage discourse even when they fail to win the majority; and
+whether moderation systems built around literal claim detection still work
+when agents paraphrase, reframe, and respond in natural language. These are
+not questions that can be answered cleanly by live A/B tests on real users:
+the interventions are adversarial, the outcomes concern persuasion and
+misinformation, and the platform configurations of interest may not yet
+exist in a controlled form.
 
-We address these questions through controlled multi-agent simulation. We
-construct a small text-based social platform whose users are LLM-driven
-personas (a pool of 24 personas, stratified across marginalized, mainstream,
-and contrarian narrative groups, each given an initial stance on a debate
-topic and an in-character posting style). Over a sequence of rounds, each
-agent observes a feedback view of the platform's recent activity, produces
-one short post in character, votes on a random sample of others' posts, and
-updates its opinion and confidence.
+Existing evidence does not close this gap. Human-subjects work establishes
+that social proof, popularity signals, and fact-check labels can affect
+behavior, but it does not measure LLM-agent populations. Classical opinion
+dynamics models provide analytic clarity, but they replace language,
+persona, and platform feedback with low-dimensional update rules. Early
+LLM-agent simulations demonstrate that agents can produce social behavior,
+but many use environment-assigned or heuristic feedback signals rather than
+letting agents themselves create the social rewards that later shape the
+platform. For Trust & Safety purposes, this leaves the central operational
+question unanswered: **which platform mechanisms actually move an LLM-agent
+population, and which popular threat models fail when tested under peer
+feedback?**
+
+We address this gap with a controlled, peer-voted social simulation testbed
+(PV-SST). The testbed is intentionally small enough to audit and reproduce,
+but rich enough to expose the platform loop that matters: LLM personas post,
+other agents vote on those posts in character, and the resulting social
+signals are fed back into future rounds. Each simulated user is an LLM-driven
+persona drawn from a stratified pool of 24 personas, assigned an initial
+stance on a debate topic and an in-character posting style. Across rounds,
+each agent observes a platform-mediated feedback view, produces a short
+post, votes on a random sample of others' posts, and updates its opinion and
+confidence. Because every post, vote, rationale, stance update, and metric is
+logged, the system is designed as a measurement instrument rather than as a
+black-box demo.
 
 Within this simulation, we test four complementary threat vectors:
 
@@ -120,21 +146,27 @@ Within this simulation, we test four complementary threat vectors:
    standard moderation interventions (fact-check labels, deamplification,
    community-notes-style rebuttal) most reliably contains the cascade?
 
-Two calibration anchors against documented human behavior are part of the
-analysis plan: a bandwagon-conformity anchor (A1) and a Reddit
-r/ChangeMyView human-replay anchor (A2). **A1 is executed and reported
-here; A2 is implemented as a pipeline but deferred, we executed it only
-against a 5-case synthetic placeholder dataset for pipeline verification,
-which is not a calibration; a production A2 on the real CMV corpus is
-identified as the highest-priority methodological follow-up (§3.7, §9.3).**
+The same measurement logic also requires calibration. Simulation results
+are useful only if their scope is explicit, so two calibration anchors
+against documented human behavior are part of the analysis plan: a
+bandwagon-conformity anchor (A1) and a Reddit r/ChangeMyView human-replay
+anchor (A2). **A1 is executed and reported here; A2 is implemented as a
+pipeline but deferred. We executed A2 only against a 5-case synthetic
+placeholder dataset for pipeline verification, which is not a calibration;
+a production A2 on the real CMV corpus is identified as the highest-priority
+methodological follow-up (§3.7, §9.3).**
 Two model families and matched random seeds enable cross-model comparison.
 
-**Our claims are deliberately modest.** We do not claim that our results
-quantitatively predict outcomes on Instagram, Snapchat, or X. We treat our
-simulation as a **threat-model probe**: if an attack succeeds in a simplified
-LLM-only environment, it warrants empirical follow-up on platforms that
-include human users. This framing follows prior simulation-based work in
-computational social science (Park et al., 2023; Hegselmann and Krause, 2002).
+The resulting product of the paper is not a prediction engine for Instagram,
+Snapchat, or X. It is a falsifiable threat-model probe: a way to test whether
+specific platform mechanisms, coordinated populations, amplified accounts,
+and moderation interventions move an LLM-agent population under controlled
+conditions. If a mechanism fails here, that failure constrains the threat
+model. If it succeeds here, it earns follow-up under larger samples, more
+models, more topics, and human calibration. This framing follows prior
+simulation-based work in computational social science (Park et al., 2023;
+Hegselmann and Krause, 2002) while adding a peer-voted platform feedback loop
+and explicit calibration anchors.
 
 **Contributions.**
 
@@ -147,7 +179,7 @@ production run pending) for future simulation-to-human validation.
 Empirically, our results motivate the **Population-Driven Influence (PDI)
 hypothesis**: in this setup, coordinated AI populations degrade discourse
 ecology more reliably than single-account amplification. Finally, EXP-6
-exposes **paraphrase leakage**, keyword-based misinformation metrics and
+exposes **paraphrase leakage**: keyword-based misinformation metrics and
 filters miss thematic propagation when LLM agents restate claims without
 copying their surface form. We treat these four as our principal
 contributions, plus the per-experiment results below.
@@ -157,12 +189,12 @@ contributions, plus the per-experiment results below.
   agent populations (EXP-1, **Figure 1**).
 - We report dose-response thresholds for two distinct attack vectors:
   coordinated-account astroturfing (EXP-2, **Figures 2–3**) and single-account
-  influence amplification (EXP-3, **Figure 5**), with markedly different
+  influence amplification (EXP-3, **Figure 4**), with markedly different
   outcomes.
 - We provide an exploratory semantic comparison of three platform
   moderation interventions on a seeded misinformation cascade and
   document why stance-aware metrics are required before any
-  effectiveness ranking can be claimed (EXP-6, **Figure 4**).
+  effectiveness ranking can be claimed (EXP-6, **Figure 5**).
 - We document a qualitative cross-model difference in cascade susceptibility
   between two similarly-sized open-weight models, qwen3.5:2b shows mean
   semantic-similarity drift near zero across interventions, while llama3.2:3b
@@ -171,7 +203,7 @@ contributions, plus the per-experiment results below.
   about model-family heterogeneity.
 - We report a calibration-anchor outcome (A1, **Figure 7**) in which our
   simulated agents' weighted one-shot bandwagon-conformity rate (0.039
-  pooled; llama 0.000, qwen 0.078) falls below the documented human band
+  pooled; llama 0.000, qwen 0.078) falls below our derived human reference band
   of 10–20%, with strong cross-model heterogeneity, motivating
   ranking-based rather than magnitude-based interpretation of our other
   findings.
@@ -187,18 +219,25 @@ contributions, plus the per-experiment results below.
 
 **Multi-agent LLM simulations.** Park et al. (2023) demonstrated the
 feasibility of multi-agent LLM simulations of social behavior in a 25-agent
-sandbox. The framework has since been extended to larger populations and
-policy domains. Our work differs in focusing on adversarial dynamics
-(astroturfing, misinformation, amplification) rather than emergent prosocial
-behavior, and in introducing peer-voted feedback rather than environment-
-heuristic reward signals.
+sandbox. That line of work establishes that LLM agents can maintain personas,
+memories, and social routines. It does not, by itself, answer the platform
+integrity question that motivates this paper: which social-feedback
+mechanisms move an LLM-agent population under adversarial or quasi-adversarial
+pressure? Many simulations also use environment-assigned rewards or heuristic
+feedback proxies. PV-SST instead closes the feedback loop through peer voting:
+the likes and downvotes that shape the next round are produced by the agents
+themselves, in character, and preserved as auditable vote traces.
 
 **Opinion dynamics.** Classical models, DeGroot averaging (DeGroot, 1974),
 Hegselmann–Krause bounded-confidence (Hegselmann and Krause, 2002), and the
 Friedkin–Johnsen influence model, provide mathematical baselines for
-opinion convergence under social influence. We use these as conceptual
-anchors but do not replicate them as direct baselines; future work could
-integrate one as a non-LLM control.
+opinion convergence under social influence. Their strength is analytic
+clarity: assumptions are explicit and dynamics are tractable. Their weakness
+for the present question is that they abstract away exactly the substrate
+platforms now need to evaluate: language, persona, peer reward, paraphrase,
+and moderation text. We use these models as conceptual anchors, but the
+paper's contribution is empirical measurement in a language-producing,
+peer-feedback system rather than another closed-form update rule.
 
 **Social-proof and conformity dynamics.** Asch (1956) established that
 humans conform to unanimous majority pressure in roughly one-third of
@@ -206,17 +245,24 @@ critical trials in a perceptual-judgement task. Salganik, Dodds, and Watts
 (2006) demonstrated experimentally that exposure to popularity signals
 increases both inequality and unpredictability of cultural-market outcomes.
 Muchnik, Aral, and Taylor (2013) measured a 25 percent positive-herding bias
-on a Reddit-like comment platform following a single arbitrary upvote. We
-use the latter two as the calibration target for our bandwagon anchor (A1):
-a per-round shift of approximately 10–20 percent under visible-majority
-exposure constitutes the documented human range.
+on a Reddit-like comment platform following a single arbitrary upvote. These
+studies make social proof the right human reference point, but they do not
+calibrate LLM agents. We therefore use the latter two as the basis for A1:
+a derived per-round shift band of approximately 10–20 percent under visible-
+majority exposure. A1 is not a claim that our agents are human-equivalent; it
+is a sanity check that tells readers how stubborn this simulated population
+is relative to documented human social-proof effects.
 
 **Influence operations and coordinated inauthentic behavior.** Empirical
 measurement of real-world coordinated campaigns has been driven by industry
-threat reports and academic analyses; we adopt the *Coordinated Inauthentic
-Behavior* (CIB) framing used in industry policy work. Our EXP-2 dose-response
-measurement is, to our knowledge, the first reported estimate of the
-*coordination ratio* required for opinion-flip in an LLM-agent population.
+threat reports and academic analyses. Those reports are essential for
+taxonomy and detection, but they rarely permit controlled counterfactuals:
+the same platform cannot be rerun with K=1, K=3, K=5, K=10, and K=20
+coordinated accounts while holding personas, topic, and feedback constant.
+We adopt the *Coordinated Inauthentic Behavior* (CIB) framing used in
+industry policy work, and use simulation to ask a counterfactual dose-response
+question: how much coordinated population is needed before opinion and
+discourse ecology move?
 
 **Misinformation interventions.** Pennycook and Rand (2021) synthesize a
 substantial body of human-subjects evidence on the psychology of fake news
@@ -225,7 +271,11 @@ intervention sweep (EXP-6) mirrors three concrete platform policy levers:
 fact-check labels (used by Meta, X, YouTube), deamplification / visibility
 filtering (used by X 2021–2022 and adopted in modified form by multiple
 platforms), and community-notes-style rebuttal (Twitter Birdwatch /
-X Community Notes).
+X Community Notes). The gap is measurement: keyword-based endorsement and
+filtering are natural first baselines, but LLM agents can preserve a claim's
+theme while changing its surface form. EXP-6 is therefore framed less as a
+definitive ranking of moderation interventions and more as a stress test for
+the measurement stack itself.
 
 **Algorithmic shaping of exposure.** Bakshy, Messing, and Adamic (2015) showed
 that Facebook's algorithmic ranking removes about 15 percent of cross-cutting
@@ -234,7 +284,10 @@ removing 70 percent more. Our EXP-1 baseline result, that even a controlled,
 neutral social-reward UX measurably suppresses minority views, is
 complementary in framing: where Bakshy et al. measure algorithmic exposure
 filtering against human users, we measure UX-induced opinion-suppression
-against LLM-agent users.
+against LLM-agent users. The point is not that a toy LLM platform reproduces
+Facebook; it is that "ordinary" engagement surfaces are treatments, and
+LLM-agent deployments need to be tested under that assumption rather than
+treated as neutral infrastructure.
 
 ---
 
@@ -253,7 +306,7 @@ empty memory.
 
 For R rounds, each agent in turn (i) reads its **feedback block**, the
 platform-mediated view of prior-round activity, varied by condition (§3.2);
-(ii) produces one short JSON-structured post (≤280 characters) in its
+(ii) produces one short JSON-structured post (at most 280 characters) in its
 persona's voice; (iii) updates its stance and confidence, with a brief
 reason. Generation uses the Ollama runtime with reasoning-token emission
 disabled, returning compact structured JSON outputs.
@@ -279,8 +332,8 @@ alignment proxy used in earlier LLM-agent work with peer-voted feedback,
 in which the social-reward signal that shapes subsequent rounds is produced
 by other agents' in-character judgements rather than by environment-imposed
 heuristics. The full vote log (voter id, target id, vote, in-character
-reason) is preserved for every trial. We refer to the combined design , 
-peer-voted feedback + persona-based agents + multi-round simulation + full
+reason) is preserved for every trial. We refer to the combined design,
+peer-voted feedback plus persona-based agents, multi-round simulation, and full
 vote-trace logging, as the **peer-voted social simulation testbed
 (PV-SST)**, and treat it as a primary methodological contribution.
 
@@ -384,7 +437,8 @@ methodological follow-up (§9.3, §10).
 
 **Models.** Two open-weight LLMs via Ollama: `qwen3.5:2b` (Alibaba,
 approximately 2.3B parameters) and `llama3.2:3b` (Meta, approximately 3B
-parameters). Both at default 8-bit quantization.
+parameters), using the default local Ollama model tags configured for the
+experiment.
 
 **Seeds.** Two seeds per cell ({42, 7}) for variance estimation. We
 acknowledge n=2 is a floor; see Limitations (§10).
@@ -400,13 +454,16 @@ acknowledge n=2 is a floor; see Limitations (§10).
 | A1 bandwagon anchor | 24 | 30 | 1 | 3 majority strengths × 2 sides |
 
 **Compute.** All experiments executed on a single RTX 4000 Ada workstation
-GPU. Total generation calls: approximately 58,300 (≈28,946 in-character
+GPU. Total generation calls: approximately 58,300 (about 28,946 in-character
 agent posts and the remainder peer-voting calls). Approximate wall-clock
 runtime: 57 hours including queueing.
 
 **Code, configs, raw logs.** Released alongside this paper at the project
-repository, including all per-agent posts and peer-vote logs to permit
-independent re-analysis.
+repository (<https://github.com/ranausmanai/synthetic-social-networks>) and
+dataset repository
+(<https://huggingface.co/datasets/ranausmans/synthetic-social-networks>),
+including all per-agent posts and peer-vote logs to permit independent
+re-analysis.
 
 ---
 
@@ -427,7 +484,7 @@ agents × 15 rounds with peer voting.
 
 **Figure 1** plots minority-view survival rate per condition.
 
-![Figure 1, Minority-view survival under social-reward conditions](figures/fig1_exp1_minority_survival.png)
+![Minority-view survival under social-reward conditions](figures/fig1_exp1_minority_survival.png)
 
 | Condition | persona retention | pairwise sim | minority survival | majority fraction |
 |---|---|---|---|---|
@@ -483,7 +540,7 @@ qualitatively similar directional pattern in a *purely LLM-driven*
 platform population, with no human users in the loop and no adversarial
 intervention.
 
-**Headline:** *In an LLM-agent population, routine social-reward UX is
+**Result summary.** *In an LLM-agent population, routine social-reward UX is
 associated with a 6–16 percentage-point reduction in minority-opinion
 survival relative to a no-signal control, directionally consistent across
 both tested model families (n=4 per cell).*
@@ -494,14 +551,16 @@ both tested model families (n=4 per cell).*
 
 ### 6.1 Hypothesis
 
-H2 (preregistered): *There exists a threshold K\* such that injecting ≥K\*
+H2 (preregistered): *There exists a threshold K\* such that injecting at least K\*
 coordinated AI accounts into an N-agent platform flips honest-majority
-opinion in ≥50% of (model, seed) runs. Prior expectation: K\*/N ≤ 0.20.*
+opinion in at least 50% of (model, seed) runs. Prior expectation: K\*/N at
+most 0.20.*
 
 ### 6.2 Design
 
 Population: 30 honest agents (independent personas, randomly-distributed
-initial stances) + K coordinated agents, where K ∈ {0, 1, 3, 5, 10, 20}.
+initial stances) + K coordinated agents, where K is one of
+{0, 1, 3, 5, 10, 20}.
 Coordinated agents share a pushed opinion ("strongly support") and a
 scripted angle they reinforce naturally across rounds. All trials run under
 the `likes` condition with peer voting, 10 rounds, 2 models × 2 seeds × 6
@@ -516,10 +575,11 @@ We report two flip-rate metrics, one preregistered and one post-hoc:
   the operationalization of the preregistered `final_honest_pushed_share`
   outcome.
 - **Broad (post-hoc):** honest-pushed-share > 0.5 on the *side* containing
-  the pushed stance ("strongly support" ∪ "support" ∪ "lean support"),
+  the pushed stance (the combined "strongly support," "support," and
+  "lean support" buckets),
   three buckets of seven. This metric was specified after observing that
   the strict criterion returns near-uniform zero across most K (since the
-  natural base rate of any single stance bucket is ≈ 1/7 ≈ 14 %, making a
+  natural base rate of any single stance bucket is about 1/7, or 14%, making a
   >50 % single-bucket adoption a particularly strong opinion-adoption
   criterion). The broad metric is consistent with the preregistration's
   general commitment to reporting direction-of-opinion shifts, but it was
@@ -530,7 +590,7 @@ We report two flip-rate metrics, one preregistered and one post-hoc:
 
 **Figure 2** plots the dose-response for both criteria.
 
-![Figure 2, Astroturfing dose-response](figures/fig2_exp2_dose_response.png)
+![Astroturfing dose-response](figures/fig2_exp2_dose_response.png)
 
 | K | strict flip rate | broad flip rate | Δ broad-shift vs K=0 |
 |---|---|---|---|
@@ -552,7 +612,7 @@ coordination-induced shift from the baseline drift.
 **Figure 3** shows simultaneous degradation of four information-ecology
 metrics at the K=20 threshold:
 
-![Figure 3, Information-ecology degradation by K](figures/fig3_exp2_ecology.png)
+![Information-ecology degradation by K](figures/fig3_exp2_ecology.png)
 
 | Metric | K=0 | K=20 | Δ |
 |---|---|---|---|
@@ -563,9 +623,10 @@ metrics at the K=20 threshold:
 
 ### 6.5 Interpretation
 
-**Coordinated AI accounts corrupt the platform's information ecology at
-high ratios, even when their specific narrative does not win.** This is
-the claim, in one sentence. Below it: the evidence, and then the limits.
+**Coordinated AI accounts degrade the platform's information ecology at
+high ratios, even when their specific narrative does not win.** The evidence
+is a coupled movement in opinion and discourse-ecology metrics, followed by
+an important seed-confound caveat.
 
 *Evidence.* Below K=20, no consistent effect on strict or broad flip rates
 emerges. At K=20 (approximately 40 percent coordinated population), the
@@ -587,13 +648,14 @@ model. With n=2 seeds the flip-event correlates perfectly with the random
 seed, and we cannot disentangle a coordination-driven flip from a
 seed-driven flip. The 40 % figure should be read as "the smallest K at
 which any flip was observed in this study," not a firm threshold
-estimate. A larger-n replication (≥5 seeds) is the immediate follow-up.
+estimate. A larger-n replication (at least 5 seeds) is the immediate follow-up.
 
-*Relation to preregistered H2.* H2 expected K\*/N ≤ 0.20; the smallest K
-with any flip in our study was K=20 / N=50 = 0.40. **The directional part
-of H2 (a threshold at which flip-rate reaches 50%) is supported at the
-highest K we tested. The magnitude part (K\*/N ≤ 0.20) is NOT supported.**
-We disclose this in line with the preregistration's falsification
+*Relation to preregistered H2.* H2 expected K\*/N at most 0.20; the smallest K
+with any flip in our study was K=20 / N=50 = 0.40. **The preregistered 50%
+flip criterion was observed only at the highest K tested, while the expected
+magnitude (K\*/N at most 0.20) was not supported.** Because the K=20 flips are
+seed-confounded, this observation does not establish a stable threshold. We
+disclose both outcomes in line with the preregistration's falsification
 commitment.
 
 *Distance from popular framings.* Our setup does **not** reproduce the
@@ -610,7 +672,7 @@ coordinated population.
 
 ### 7.1 Hypothesis
 
-EXP-3 was **added post-preregistration** to test a distinct attack vector , 
+EXP-3 was **added post-preregistration** to test a distinct attack vector,
 single-account visibility amplification, that was not part of the original
 analysis plan. The preregistered H4 in our analysis plan pertains to
 persona-group vulnerability under social pressure (EXP-7) and is reported
@@ -637,9 +699,9 @@ peer voting, 10 rounds.
 
 ### 7.3 Results
 
-**Figure 5** plots the dose-response.
+**Figure 4** plots the dose-response.
 
-![Figure 5, Influence-amplification dose response](figures/fig5_exp3_influence.png)
+![Influence-amplification dose response](figures/fig5_exp3_influence.png)
 
 | Multiplier | final broad share | final strict share | broad flip rate |
 |---|---|---|---|
@@ -669,11 +731,11 @@ attack; our data, across both tested models, all five multiplier levels,
 and 20 trials, does not support that framing. The coordinated-population
 vector (EXP-2) does.**
 
-**Headline:** *In our peer-voted simulated platform, a single high-reach
+**Result summary.** *In our peer-voted simulated platform, a single high-reach
 AI account did not shift honest-agent opinion across visibility
 multipliers from 1× to 20×, and showed weak backfire evidence on one
-model family. Influence in our simulation requires coordinated
-populations (EXP-2), not single-account amplification.*
+model family. The observed contrast favors coordinated-population influence
+(EXP-2) over single-account amplification.*
 
 If this pattern replicates at larger sample sizes (n=4 per cell is the
 floor here), it has direct implications for Trust & Safety prioritization
@@ -729,9 +791,9 @@ of thematic propagation.
 
 ### 8.4 Results
 
-**Figure 4** plots the per-intervention semantic endorsement Δ.
+**Figure 5** plots the per-intervention semantic endorsement Δ.
 
-![Figure 4, Misinformation cascade containment by intervention](figures/fig4_exp6_interventions.png)
+![Post-hoc semantic theme drift by intervention](figures/fig4_exp6_interventions.png)
 
 | Intervention | Δ similarity (mean ± std) | final similarity | thematically aligned agents | containment vs none |
 |---|---|---|---|---|
@@ -817,11 +879,11 @@ discussed above is a prerequisite.
 
 **Figure 6** disaggregates EXP-6 by model family.
 
-![Figure 6, Cross-model heterogeneity in cascade strength](figures/fig6_cross_model.png)
+![Cross-model heterogeneity in semantic theme drift](figures/fig6_cross_model.png)
 
 | Intervention | qwen3.5:2b Δ similarity | llama3.2:3b Δ similarity |
 |---|---|---|
-| none | ≈ 0.000 | **+0.036** |
+| none | about 0.000 | **+0.036** |
 | factcheck_label | −0.039 | +0.004 |
 | deamplify | +0.024 | +0.018 |
 | rebuttal | −0.014 | +0.077 |
@@ -849,9 +911,9 @@ families.
 
 ### 9.2 Calibration anchor A1, bandwagon conformity
 
-**Figure 7** plots the A1 result against the documented human band.
+**Figure 7** plots the A1 result against the derived human reference band.
 
-![Figure 7, Bandwagon-conformity calibration vs human reference range](figures/fig7_anchor_calibration.png)
+![Bandwagon-conformity calibration vs human reference range](figures/fig7_anchor_calibration.png)
 
 Across all 24 A1 trials (two models × two seeds × three majority-claim
 strengths × two pushed-stance sides), **14 of 360 minority agents shifted
@@ -863,11 +925,12 @@ is strongly heterogeneous by model:
   (conformity rate = 0.000).
 - **qwen3.5:2b**: 14 of 180 minority agents shifted across 12 trials
   (conformity rate = 0.078; per-trial range 0.000 to 0.267, with the
-  highest-shift trials hitting the low end of the human band).
+  highest-shift trials hitting the low end of the derived human reference
+  band).
 
-The pooled conformity rate of 0.039 is below the documented human band of
-10–20 percent per-round shift band (our derived approximation; see §3.6
-for the construction from Muchnik et al. 2013 and Salganik et al. 2006).
+The pooled conformity rate of 0.039 is below our derived human reference band
+of 10–20 percent per-round shift (see §3.7 for the construction from
+Muchnik et al. 2013 and Salganik et al. 2006).
 Per-model rates are also below the band on average, though qwen3.5:2b's
 distribution does enter the band in two of twelve trials (0.20 and 0.267).
 
@@ -877,8 +940,9 @@ single-round reference range, with strong cross-model heterogeneity (llama
 shows none; qwen shows some). We do **not** infer from this that our
 EXP-1, EXP-2, EXP-3, or EXP-6 magnitudes are quantitative lower bounds on
 human-platform effects, that would require an additional set of
-assumptions (single-round bandwagon transfer → multi-round dynamics
-transfer; one-shot conformity → coordinated-influence resistance) that this
+assumptions (transfer from single-round bandwagon pressure to multi-round
+dynamics; transfer from one-shot conformity to coordinated-influence
+resistance) that this
 calibration does not test. We instead phrase all headline claims as
 **rankings of conditions and qualitative direction-of-effect statements**;
 quantitative magnitudes are presented as numbers from this specific
@@ -909,7 +973,7 @@ when models are pooled). We report means and standard deviations and
 direction of effect; we do **not** perform Bonferroni-corrected significance
 testing because n=4 is below the threshold at which Bonferroni-corrected
 paired t-tests carry useful statistical power. A multi-cycle follow-up
-should run n≥5 seeds per cell to enable formal significance testing.
+should run at least 5 seeds per cell to enable formal significance testing.
 
 **Within-cell variance overlaps between-cell effects (EXP-1 §5.4).** The
 control condition's per-trial minority-survival range [0.50, 1.00] spans
@@ -964,7 +1028,7 @@ a complete model of human voting.
 **Persona-stability sanity check absent.** We did not run a control in
 which persona-to-agent mapping was shuffled, which would validate that
 persona-tagged outputs are distinct from each other rather than agents
-paraphrasing the topic uniformly. Persona-retention values (cosine ≈ 0.55)
+paraphrasing the topic uniformly. Persona-retention values (cosine about 0.55)
 suggest some persona signal, but a shuffle baseline would be a stronger
 test. Identified as immediate follow-up.
 
@@ -993,18 +1057,16 @@ spend non-trivial setup time on the Ollama side.
 
 ## 11. Conclusion
 
-> *On a platform of LLM agents, design persuades before any actor
-> speaks, a coordinated crowd carries opinion further than any single
-> amplified voice, and a paraphrase slips past every filter built to
-> catch the words it has changed. Our agents were more stubborn than
-> humans, and still moved.*
-
-**Two claims emerge from this study and we stand behind both within the
-limits of the design.**
+This study yields two central claims within the limits of its design:
+platform feedback is itself an intervention, and coordinated populations
+shape LLM-agent discourse more reliably than amplified individuals. A third,
+methodological result shows why these dynamics are difficult to measure:
+LLM agents can preserve a claim's theme while changing its surface form,
+causing literal-keyword metrics and filters to miss propagation.
 
 1. **The Population-Driven Influence (PDI) hypothesis: in LLM-agent
    social platforms, influence is population-driven, not amplification-
-   driven**, coordinated populations measurably degrade discourse
+   driven**: coordinated populations measurably degrade discourse
    ecology at high ratios (EXP-2: K=20, 40% of the platform), while a
    single amplified account does not produce a coherent dose-response
    across multipliers from 1× to 20× (EXP-3). The contrast is in tension
@@ -1012,7 +1074,7 @@ limits of the design.**
    Trust & Safety prioritization toward distributed-account detection.
    We state PDI explicitly as a named hypothesis so that follow-up
    studies can confirm or falsify it directly.
-2. **Standard engagement UX is not neutral for LLM-agent populations** , 
+2. **Standard engagement UX is not neutral for LLM-agent populations**:
    minority-view persistence drops by 6–16 percentage points under every
    social-pressure condition tested (likes, visible majority, leaderboard,
    downvote), with no adversarial actor present (EXP-1). The pattern is
@@ -1021,13 +1083,13 @@ limits of the design.**
 These theses sit on top of three more granular observations:
 
 1. **UX-driven diversity loss (EXP-1).** The presence of standard
-   social-reward UX alone, likes, visible majority, leaderboards,
-   downvotes, is associated with reduced minority-opinion survival (by
+   social-reward UX alone (likes, visible majority, leaderboards, and
+   downvotes) is associated with reduced minority-opinion survival (by
    6–16 percentage points relative to a no-signal control) in an
    LLM-agent population, even with no adversarial actor present.
 2. **Coordination threshold (EXP-2).** Coordinated AI accounts produced
    a 50% strict opinion-flip rate only at K=20 (40% of the 50-agent
-   total population, the highest K tested); the preregistered K\*/N ≤
+   total population, the highest K tested); the preregistered K\*/N at most
    0.20 magnitude expectation is *not* supported by this study.
 3. **Paraphrase leakage (EXP-6).** Of three standard moderation
    interventions tested, a *post-hoc* semantic-endorsement analysis
@@ -1062,7 +1124,7 @@ multi-family replication as immediate follow-up.
 
 A bandwagon-conformity calibration anchor (A1) indicates that our simulated
 LLM agents show a weighted overall conformity rate of 0.039 under one-shot
-visible-majority exposure, below the 10–20% documented human range, with
+visible-majority exposure, below the derived 10–20% human reference range, with
 strong cross-model heterogeneity (llama 0.000, qwen 0.078). We therefore
 **do not** claim our magnitudes are lower bounds for human-platform effects;
 we present numbers as direction-of-effect within this specific simulation
@@ -1075,8 +1137,8 @@ than documented human subjects (Salganik et al., 2006; Muchnik et al.,
 influence, and paraphrase leakage (EXP-1, EXP-2, and EXP-6 respectively)
 still emerge under this relatively stubborn agent population makes the
 directional findings more concerning, not less.** We do **not** claim
-these magnitudes are lower bounds for human platforms, A1 measured
-one-shot bandwagon conformity, and that may not transfer directly to the
+these magnitudes are lower bounds for human platforms: A1 measured
+one-shot bandwagon conformity, which may not transfer directly to the
 multi-round coordinated-influence or misinformation-cascade dynamics
 tested here. But the calibration result motivates a concrete hypothesis
 for follow-up human studies: **comparable human populations may show
@@ -1087,15 +1149,15 @@ most important methodological follow-up our calibration-anchor protocol
 identifies.
 
 The setup is not a predictive model of any specific real-world platform. It
-is a controlled threat-model probe, a tractable testbed in which platform
-interventions can be ranked, attack thresholds can be estimated, and model-
-level robustness can be compared, in conditions that would be ethically or
-operationally infeasible on a real-platform live experiment. The fact that
-multiple distinct degradation modes appear in a tightly-controlled
-simulation should motivate scaled-up replication of this work with more
-seeds, more topics, more model families (including closed models), and
-direct human-platform comparison studies to calibrate simulation-to-human
-transfer.
+is a controlled threat-model probe: a tractable testbed in which platform
+interventions can be compared preliminarily, attack thresholds can be
+estimated, and model-level robustness can be studied under conditions that
+would be ethically or operationally infeasible on a real-platform live
+experiment. The fact that multiple distinct degradation modes appear in a
+tightly-controlled simulation should motivate scaled-up replication of this
+work with more seeds, more topics, more model families (including closed
+models), and direct human-platform comparison studies to calibrate
+simulation-to-human transfer.
 
 ---
 
@@ -1117,7 +1179,11 @@ agent outputs from the four reported production experiments, 28,946
 including pipeline-verification smoke runs, all stored as JSONL),
 peer-vote logs (one JSON file per condition-run), embedding cache, the
 preregistered analysis plan (`PREREGISTRATION.md`), and the framing
-document (`FRAMING.md`) are available at the project repository. The full
+document (`FRAMING.md`) are available at the project repository
+(<https://github.com/ranausmanai/synthetic-social-networks>) and dataset
+repository
+(<https://huggingface.co/datasets/ranausmans/synthetic-social-networks>).
+The full
 experimental pipeline can be reproduced from the included shell launcher
 scripts and YAML configuration files against an Ollama installation with
 the two generation models qwen3.5:2b and llama3.2:3b (§4) and the
@@ -1130,6 +1196,10 @@ release-engineering follow-up but is not included in this submission.
 ---
 
 ## References
+
+```{=latex}
+\small
+```
 
 - Asch, S. E. (1956). Studies of independence and conformity: I. A minority
   of one against a unanimous majority. *Psychological Monographs: General

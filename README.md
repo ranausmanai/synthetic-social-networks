@@ -94,18 +94,16 @@ cd paper && pandoc paper.md \
 
 ## Citing
 
-> Usman, R. M. (2026). *Synthetic Social Networks: When Routine
-> Social-Reward UX Already Hurts, Coordinated AI Attacks Compound the
-> Damage, and Single Amplified Accounts Fail.* (Working paper.)
+> Usman, R. M. (2026). *Engagement Signals and Coordinated Crowds Reshape
+> LLM-Agent Discourse.* (Working paper.)
 
 BibTeX:
 
 ```bibtex
 @misc{usman2026synthetic,
   author = {Usman, Rana Muhammad},
-  title  = {Synthetic Social Networks: When Routine Social-Reward UX
-            Already Hurts, Coordinated AI Attacks Compound the Damage,
-            and Single Amplified Accounts Fail},
+  title  = {Engagement Signals and Coordinated Crowds Reshape
+            LLM-Agent Discourse},
   year   = {2026},
   url    = {https://github.com/ranausmanai/synthetic-social-networks},
   note   = {Working paper; dataset at

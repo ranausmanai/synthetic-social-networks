@@ -66,20 +66,20 @@ def fig_exp1_minority_survival() -> None:
     ns = [len(buckets[c]) for c in conditions]
 
     fig, ax = plt.subplots(figsize=(7, 4.2))
-    colors = ["#444", "#1f77b4", "#d62728", "#ff7f0e", "#9467bd"]
+    colors = ["#555555", "#4C78A8", "#E45756", "#F2A541", "#8F6BB3"]
     bars = ax.bar(conditions, means, yerr=stds, capsize=5,
                   color=colors, edgecolor="black", linewidth=0.6)
     # control reference line
     ax.axhline(means[0], color="#444", linestyle="--", alpha=0.4, linewidth=1,
                label=f"control mean ({means[0]:.2f})")
-    for bar, m, s, n in zip(bars, means, stds, ns):
+    for bar, m, s in zip(bars, means, stds):
         ax.text(bar.get_x() + bar.get_width()/2,
                 m + s + 0.015,
-                f"{m:.2f}\nn={n}",
+                f"{m:.2f}",
                 ha="center", va="bottom", fontsize=8)
     ax.set_ylabel("Minority-opinion survival rate")
     ax.set_xlabel("Feedback condition")
-    ax.set_title("EXP-1 — Minority-opinion survival across social-pressure conditions\n(n=4 model×seed combinations per cell, 20 agents × 15 rounds)")
+    ax.set_title("EXP-1 — Minority-opinion survival under social-reward UX\n(mean ± SD; n=4 model×seed combinations per condition)")
     ax.set_ylim(0, 1)
     ax.grid(axis="y", alpha=0.3)
     ax.legend(loc="lower right", framealpha=0.9)
@@ -106,14 +106,14 @@ def fig_exp2_dose_response() -> None:
 
     fig, ax = plt.subplots(figsize=(7, 4.2))
     ax.errorbar(Ks, fb_mean, yerr=fb_std, marker="o", linewidth=2,
-                color="#1f77b4", capsize=4, label="Broad-side flip criterion (3 buckets)")
+                color="#4C78A8", capsize=4, label="Broad-side stance share (3 buckets)")
     ax.errorbar(Ks, fs_mean, yerr=fs_std, marker="s", linewidth=2,
-                color="#d62728", capsize=4, label="Strict flip criterion (exact bucket)")
+                color="#E45756", capsize=4, label="Exact pushed-stance share")
     ax.axhline(0.5, color="black", linestyle="--", alpha=0.5, linewidth=1, label="Majority threshold (0.50)")
-    ax.axvspan(15, 22, color="orange", alpha=0.10, label="High-coordination regime (K ≥ 20)")
+    ax.axvspan(15, 22, color="#F2A541", alpha=0.10, label="Highest tested coordination (K=20)")
     ax.set_xlabel("K — number of coordinated AI accounts injected\n(honest population = 30 agents)")
     ax.set_ylabel("Final honest-agent share adopting pushed opinion")
-    ax.set_title("EXP-2 — Astroturfing dose-response\n(2 models × 2 seeds × 6 K-values = 24 trials)")
+    ax.set_title("EXP-2 — Honest-agent stance share by coordinated-account count\n(mean ± SD; n=4 model×seed combinations per K)")
     ax.set_xticks(Ks)
     ax.set_ylim(0, 0.7)
     ax.grid(alpha=0.3)
@@ -171,13 +171,12 @@ def fig_exp2_ecology() -> None:
         (axes[1, 1], "Composite collapse score", coll_m, coll_s, "higher = more collapse"),
     ]
     for ax, title, m, s, sub in panels:
-        ax.errorbar(Ks_sorted, m, yerr=s, marker="o", linewidth=2, color="#1f77b4", capsize=3)
-        ax.axvspan(15, 22, color="orange", alpha=0.10)
+        ax.errorbar(Ks_sorted, m, yerr=s, marker="o", linewidth=2, color="#4C78A8", capsize=3)
         ax.set_title(f"{title}\n({sub})", fontsize=10)
         ax.set_xlabel("K coordinated agents")
         ax.set_xticks(Ks_sorted)
         ax.grid(alpha=0.3)
-    fig.suptitle("EXP-2 — Information-ecology degradation by K (regime change at K=20)",
+    fig.suptitle("EXP-2 — Information-ecology metrics by coordinated-account count",
                  fontsize=12, y=1.00)
     plt.tight_layout()
     out = FIGDIR / "fig3_exp2_ecology.png"
@@ -202,10 +201,7 @@ def fig_exp6_interventions() -> None:
         delta_std.append(float(r["delta_similarity_std"]))
 
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
-    colors = []
-    for d in delta_mean:
-        if d < 0: colors.append("#2ca02c")   # green = reduced cascade
-        else:     colors.append("#d62728")   # red = increased cascade
+    colors = ["#7A7A7A", "#4C78A8", "#72A0C1", "#9E9E9E"]
     bars = ax.bar(interventions, delta_mean, yerr=delta_std, capsize=5,
                   color=colors, edgecolor="black", linewidth=0.6)
     ax.axhline(0, color="black", linewidth=1, alpha=0.6)
@@ -216,14 +212,14 @@ def fig_exp6_interventions() -> None:
                 ha="center",
                 va="bottom" if m >= 0 else "top",
                 fontsize=9)
-    ax.set_ylabel("Δ semantic similarity to false claim (final − initial)\nlower = intervention reduced cascade")
+    ax.set_ylabel("Δ semantic similarity to seeded claim (final − initial)\npost-hoc thematic metric; not stance-aware")
     ax.set_xlabel("Intervention regime")
-    ax.set_title("EXP-6 — Misinformation cascade containment by intervention\n(2 models × 2 seeds = 4 trials per intervention; nomic-embed-text similarity)")
+    ax.set_title("EXP-6 — Post-hoc semantic theme drift by intervention\n(mean ± SD; n=4 model×seed combinations per intervention)")
     ax.grid(axis="y", alpha=0.3)
     # Annotation about rebuttal caveat
-    ax.annotate("rebuttal effect may be\nmeasurement artifact —\nrebuttal text shares the\nclaim's thematic domain",
+    ax.annotate("Similarity can increase when agents\nrefute the same thematic content",
                 xy=(3, delta_mean[3]),
-                xytext=(2.0, delta_mean[3] + 0.08),
+                xytext=(1.9, delta_mean[3] + 0.075),
                 arrowprops=dict(arrowstyle="->", alpha=0.5, color="gray"),
                 fontsize=8, color="gray", ha="left")
     plt.tight_layout()
@@ -256,13 +252,13 @@ def fig_exp3_influence() -> None:
 
     fig, ax = plt.subplots(figsize=(7, 4.2))
     ax.errorbar(mults, broad_m, yerr=broad_s, marker="o", linewidth=2,
-                color="#1f77b4", capsize=4, label="Broad-side share (3 buckets)")
+                color="#4C78A8", capsize=4, label="Broad-side share (3 buckets)")
     ax.errorbar(mults, strict_m, yerr=strict_s, marker="s", linewidth=2,
-                color="#d62728", capsize=4, label="Strict share (exact bucket)")
+                color="#E45756", capsize=4, label="Exact pushed-stance share")
     ax.axhline(0.5, color="black", linestyle="--", alpha=0.5, linewidth=1, label="Majority threshold")
     ax.set_xlabel("Visibility multiplier of single influencer agent")
     ax.set_ylabel("Final honest-agent share adopting pushed opinion")
-    ax.set_title("EXP-3 — Influence amplification (verified-badge attack)\nNo coherent dose-response observed (n=4 per multiplier)")
+    ax.set_title("EXP-3 — Single-account visibility amplification\nNo monotonic dose-response (mean ± SD; n=4 per multiplier)")
     ax.set_xticks(mults)
     ax.set_xticklabels([f"{m}×" for m in mults])
     ax.set_ylim(0, 0.7)
@@ -294,7 +290,7 @@ def fig_cross_model() -> None:
     x = np.arange(len(interventions))
     width = 0.4
     fig, ax = plt.subplots(figsize=(8, 4.5))
-    color_map = {"qwen3.5:2b": "#1f77b4", "llama3.2:3b": "#ff7f0e"}
+    color_map = {"qwen3.5:2b": "#4C78A8", "llama3.2:3b": "#F58518"}
     for i, model in enumerate(models):
         means, stds = [], []
         for intv in interventions:
@@ -308,13 +304,10 @@ def fig_cross_model() -> None:
     ax.axhline(0, color="black", linewidth=1, alpha=0.6)
     ax.set_xticks(x)
     ax.set_xticklabels(interventions)
-    ax.set_ylabel("Δ semantic similarity to false claim\n(lower = less cascade propagation)")
+    ax.set_ylabel("Δ semantic similarity to seeded claim\n(post-hoc thematic metric; not stance-aware)")
     ax.set_xlabel("Intervention")
-    ax.set_title(
-        "Cross-model cascade-strength difference (single comparison, n=2 model families)\n"
-        "qwen3.5:2b: Δ similarity ≈ 0 across interventions (mean -0.008);\n"
-        "llama3.2:3b: consistently positive Δ across interventions (mean +0.034)"
-    )
+    ax.set_title("EXP-6 — Semantic theme drift differs across two tested models\n"
+                 "(n=2 seeds per model and intervention)")
     ax.grid(axis="y", alpha=0.3)
     ax.legend(framealpha=0.95, fontsize=9)
     plt.tight_layout()
@@ -334,9 +327,10 @@ def fig_anchor() -> None:
 
     fig, ax = plt.subplots(figsize=(7.5, 4.4))
     HUMAN_LO, HUMAN_HI = 0.10, 0.20
-    ax.axhspan(HUMAN_LO, HUMAN_HI, color="#2ca02c", alpha=0.18,
-               label=f"Documented human band ({HUMAN_LO:.0%}–{HUMAN_HI:.0%})\n(Salganik et al. 2006; Muchnik et al. 2013)")
-    color_map = {"qwen3.5:2b": "#1f77b4", "llama3.2:3b": "#ff7f0e"}
+    ax.axhspan(HUMAN_LO, HUMAN_HI, color="#54A24B", alpha=0.18,
+               label=f"Derived human reference band ({HUMAN_LO:.0%}–{HUMAN_HI:.0%})\n"
+                     "(constructed from Salganik et al. 2006; Muchnik et al. 2013)")
+    color_map = {"qwen3.5:2b": "#4C78A8", "llama3.2:3b": "#F58518"}
     for model in sorted({r["model"] for r in rows}):
         mrows = [r for r in rows if r["model"] == model]
         xs = [float(r["claimed_majority"]) for r in mrows]
@@ -346,11 +340,8 @@ def fig_anchor() -> None:
                     color=color_map.get(model), label=model)
     ax.set_xlabel("Claimed majority strength shown to agents")
     ax.set_ylabel("Conform rate (minority → majority shift)")
-    ax.set_title(
-        "A1 — Bandwagon-conformity calibration\n"
-        "Pooled rate 0.039 (14 of 360 minority agents shifted; llama=0.000, qwen=0.078);\n"
-        "below documented human band — sim-to-human transfer remains uncalibrated"
-    )
+    ax.set_title("A1 — One-shot bandwagon conformity\n"
+                 "Pooled agent rate 0.039 versus derived 0.10–0.20 human reference band")
     ax.set_xlim(0.5, 0.95)
     ax.set_ylim(-0.02, 0.32)
     ax.grid(alpha=0.3)
