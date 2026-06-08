@@ -6,8 +6,6 @@
 
 *Correspondence:* `usmanashrafrana@gmail.com`
 
-*Manuscript date:* 2026-06-09
-
 ---
 
 > **Code & data availability.** Complete experimental pipeline, fixed
