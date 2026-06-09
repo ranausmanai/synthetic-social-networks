@@ -1,4 +1,4 @@
-# AI-Agent Populations Reveal Engagement Signals Suppress Minority Views and Coordination Beats Amplification
+# Peer-Voted AI-Agent Populations Reveal Engagement Signals Suppress Minority Views and Coordination Outperforms Amplification
 
 **Rana Muhammad Usman**
 
@@ -15,23 +15,20 @@
 > framing document (`FRAMING.md`) are released at
 > <https://github.com/ranausmanai/synthetic-social-networks> and
 > <https://huggingface.co/datasets/ranausmans/synthetic-social-networks>.
-> All
-> seven figures in this manuscript are rendered programmatically from
+> All seven figures in this manuscript are rendered programmatically from
 > the released data via `paper/make_figures.py`.
 
 ---
 
 ## Abstract
 
-Large language model (LLM) agents are increasingly common on social-media
-platforms, deployed as companion accounts, automated brand presences, AI
-influencers, and components of multi-agent systems whose dynamics at
-population scale remain poorly understood. As the LLM-agent fraction of
-platform users grows, operators face questions that cannot be answered
-ethically through live experimentation on real users: how vulnerable is the
-platform to manipulation when a meaningful fraction of users are LLM agents,
-and does standard engagement UX itself distort discourse in such a
-population.
+As large language model (LLM) agents are deployed at population scale in
+multi-agent systems and on social platforms, their collective behavior under
+realistic social-feedback signals remains poorly characterized. Operators
+therefore face questions that cannot be answered ethically through live
+experimentation on real users: how vulnerable is a platform to manipulation
+when a meaningful fraction of users are LLM agents, and does standard
+engagement UX itself distort discourse in such a population?
 
 A peer-voted LLM-agent social-platform testbed (PV-SST) is constructed to
 investigate these questions. Every user is an LLM agent with an assigned
@@ -46,19 +43,20 @@ against a derived human bandwagon-conformity reference range via a
 within-study anchor (A1).
 
 Three empirical findings and one methodological observation are reported
-(n=4 per cell). Standard social-reward UX alone is associated with a 6 to
-16 percentage-point reduction in minority-opinion survival relative to a
-no-signal control, directionally consistent across both tested model
-families. Coordinated AI accounts produce a 50% strict opinion-flip rate
-only at the largest tested coordination ratio (K=20, approximately 40% of a
-50-agent platform), while single-account amplification shows no coherent
-dose-response across visibility multipliers from 1x to 20x. Together these
-results constitute the Population-Driven Influence (PDI) hypothesis:
-opinion movement in our simulation is population-driven rather than
-amplification-driven. The methodological observation, paraphrase leakage,
-is that keyword-based misinformation defenses miss thematic propagation
-because LLM agents paraphrase rather than copy seeded claims, breaking
-literal-keyword measurement and filtering approaches.
+(n=4 per cell). First, standard social-reward UX alone is associated with
+a 6 to 16 percentage-point reduction in minority-opinion survival relative
+to a no-signal control, directionally consistent across both tested model
+families. Second, coordinated AI accounts produce a 50% strict opinion-flip
+rate only at the largest tested coordination ratio (K=20, approximately
+40% of a 50-agent platform). Third, single-account amplification shows no
+coherent dose-response across visibility multipliers from 1x to 20x. The
+contrast between the second and third findings constitutes the
+Population-Driven Influence (PDI) hypothesis: opinion movement in our
+simulation is population-driven rather than amplification-driven. The
+methodological observation, paraphrase leakage, is that keyword-based
+misinformation defenses miss thematic propagation because LLM agents
+paraphrase rather than copy seeded claims, breaking literal-keyword
+measurement and filtering approaches.
 
 The calibration anchor places simulated agents below our derived human
 bandwagon-conformity reference band (pooled rate 0.039 against a 10 to 20%
@@ -171,7 +169,10 @@ and explicit calibration anchors.
 Methodologically, we introduce a **peer-voted social simulation testbed
 (PV-SST)** in which LLM agents generate posts, vote on each other in
 character, and expose the resulting social signals back into the platform
-loop. We pair this with a **calibration-anchor protocol**: an executed
+loop. PV-SST functions as an evaluation instrument for multi-agent LLM
+populations: it measures collective behavior, cross-model heterogeneity, and
+emergent failure modes such as paraphrase leakage that single-agent LLM
+benchmarks cannot capture. We pair this with a **calibration-anchor protocol**: an executed
 bandwagon-conformity anchor (A1) and a deferred human-replay anchor (A2,
 production run pending) for future simulation-to-human validation.
 Empirically, our results motivate the **Population-Driven Influence (PDI)
@@ -225,6 +226,19 @@ pressure? Many simulations also use environment-assigned rewards or heuristic
 feedback proxies. PV-SST instead closes the feedback loop through peer voting:
 the likes and downvotes that shape the next round are produced by the agents
 themselves, in character, and preserved as auditable vote traces.
+
+**LLM-agent population evaluation.** Recent work extends LLM-agent
+evaluation from small interactive demonstrations toward behavioral fidelity
+and population scale. Park et al. (2024) construct interview-conditioned
+agents for 1,052 people and evaluate how accurately they reproduce individual
+attitudes and behaviors. OASIS (Yang et al., 2024) develops a scalable
+social-media simulator capable of modeling up to one million LLM agents and
+replicating group phenomena such as information diffusion, polarization, and
+herding. These systems establish fidelity and scale as core evaluation
+dimensions; PV-SST complements them by treating peer-generated platform
+feedback as an experimental variable and stress-testing collective failure
+modes across engagement, coordination, amplification, and misinformation
+conditions.
 
 **Opinion dynamics.** Classical models, DeGroot averaging (DeGroot, 1974),
 Hegselmann–Krause bounded-confidence (Hegselmann and Krause, 2002), and the
@@ -802,9 +816,9 @@ of thematic propagation.
 
 ### 8.5 Interpretation
 
-**The most consequential EXP-6 finding is methodological: current
-misinformation metrics for LLM-agent systems are brittle in a specific
-way we call *paraphrase leakage*.** Our preregistered keyword-matching
+**The most consequential EXP-6 finding is methodological: literal-keyword
+misinformation metrics and filters are brittle in a specific way we call
+*paraphrase leakage*.** Our preregistered keyword-matching
 `final_endorser_share` returned zero across all 16 trials, not because no
 cascade occurred, but because honest agents paraphrased the claim's
 themes rather than reusing its surface keywords (raw posts in §8.3
@@ -1061,7 +1075,12 @@ LLM-agent discourse more reliably than amplified individuals; and LLM-agent
 misinformation propagation cannot be measured reliably with literal keyword
 matching alone.
 
-1. **The Population-Driven Influence (PDI) hypothesis: in LLM-agent
+1. **Standard engagement UX is not neutral for LLM-agent populations**:
+   minority-view persistence drops by 6–16 percentage points under every
+   social-pressure condition tested (likes, visible majority, leaderboard,
+   downvote), with no adversarial actor present (EXP-1). The pattern is
+   directionally consistent across both tested model families.
+2. **The Population-Driven Influence (PDI) hypothesis: in LLM-agent
    social platforms, influence is population-driven, not amplification-
    driven**: coordinated populations measurably degrade discourse
    ecology at high ratios (EXP-2: K=20, 40% of the platform), while a
@@ -1071,39 +1090,34 @@ matching alone.
    Trust & Safety prioritization toward distributed-account detection.
    We state PDI explicitly as a named hypothesis so that follow-up
    studies can confirm or falsify it directly.
-2. **Standard engagement UX is not neutral for LLM-agent populations**:
-   minority-view persistence drops by 6–16 percentage points under every
-   social-pressure condition tested (likes, visible majority, leaderboard,
-   downvote), with no adversarial actor present (EXP-1). The pattern is
-   directionally consistent across both tested model families.
+3. **Paraphrase leakage makes literal-keyword misinformation measurement
+   unreliable on LLM-agent platforms**: across all 16 EXP-6 trials, the
+   preregistered keyword-based endorsement metric returned zero because
+   honest agents paraphrased the seeded claim's themes rather than reusing
+   its keywords. A post-hoc semantic-endorsement analysis recovered
+   thematic propagation that the keyword metric missed, but cannot
+   distinguish endorsement from refutation. Stance-aware,
+   polarity-conditioned metrics are a prerequisite for any
+   intervention-effectiveness ranking on LLM-agent platforms.
 
-Two design-specific results qualify these claims:
+Two design-specific caveats qualify these claims:
 
-1. **Coordination threshold (EXP-2).** Coordinated AI accounts produced
-   a 50% strict opinion-flip rate only at K=20 (40% of the 50-agent
-   total population, the highest K tested); the preregistered K\*/N at most
-   0.20 magnitude expectation is *not* supported by this study.
-2. **Paraphrase leakage (EXP-6).** Of three standard moderation
-   interventions tested, a *post-hoc* semantic-endorsement analysis
-   (the preregistered keyword-based metric returned zero across all
-   16 trials, because LLM agents paraphrased the seeded claim rather
-   than copying its keywords) suggests fact-check labels may reduce
-   thematic propagation, deamplification is approximately neutral, and
-   community-notes-style rebuttals show an apparent amplification that
-   is likely a measurement artifact. A stance-aware metric is required
-   before any of these intervention rankings should be interpreted as
-   effectiveness claims.
-
-The single-account amplification experiment (EXP-3) returned a directional
-null / no-dose-response result: a single AI account with visibility
-multipliers from 1× to 20×
-did not shift opinion in a coherent dose-response pattern in our setup
-(n=4 per multiplier), and showed weak backfire evidence on one model
-family. This is in tension with popular framings of "AI influencer" risk
-that emphasize single-account amplification and instead, in our
-simulation, points to coordinated populations as the operative threat;
-larger-n replication is needed before this null is read as a strong
-contradictory claim.
+1. **Coordination-threshold magnitude (EXP-2).** The K=20 / N=50 = 0.40
+   threshold at which the 50% strict flip rate appeared exceeds the
+   preregistered prior expectation of K\*/N at most 0.20, and both flip
+   events occurred at the same random seed (seed=7), so we cannot
+   disentangle a coordination-driven flip from a seed-driven flip with
+   n=2 seeds. The 40% figure should be read as "the smallest K at which
+   any flip was observed in this study," not as a firm threshold
+   estimate.
+2. **Intervention-ranking artifact symmetry (EXP-6).** The exploratory
+   semantic-endorsement analysis suggests fact-check labels may reduce
+   thematic propagation while community-notes-style rebuttals appear to
+   amplify it, but both findings carry the same measurement-artifact
+   concern: rebuttal text and fact-check tags both manipulate the
+   thematic surface of subsequent honest-agent posts independently of
+   their stance. Neither intervention ranking should be interpreted as
+   an effectiveness claim before a stance-aware re-analysis.
 
 Cross-cutting, we observe a qualitative difference in cascade dynamics
 between two similarly-sized open-weight models: qwen3.5:2b exhibits a mean
@@ -1222,6 +1236,11 @@ release-engineering follow-up but is not included in this submission.
   Interface Software and Technology (UIST '23)*. ACM.
   https://doi.org/10.1145/3586183.3606763
 
+- Park, J. S., Zou, C. Q., Shaw, A., Hill, B. M., Cai, C., Morris, M. R.,
+  Willer, R., Liang, P., & Bernstein, M. S. (2024). Generative agent
+  simulations of 1,000 people. *arXiv preprint arXiv:2411.10109*.
+  https://arxiv.org/abs/2411.10109
+
 - Pennycook, G., & Rand, D. G. (2021). The psychology of fake news. *Trends
   in Cognitive Sciences*, 25(5), 388–402.
   https://doi.org/10.1016/j.tics.2021.02.007
@@ -1230,3 +1249,8 @@ release-engineering follow-up but is not included in this submission.
   of inequality and unpredictability in an artificial cultural market.
   *Science*, 311(5762), 854–856.
   https://doi.org/10.1126/science.1121066
+
+- Yang, Z., Zhang, Z., Zheng, Z., Jiang, Y., Gan, Z., Wang, Z., et al.
+  (2024). OASIS: Open agent social interaction simulations with one million
+  agents. *arXiv preprint arXiv:2411.11581*.
+  https://arxiv.org/abs/2411.11581

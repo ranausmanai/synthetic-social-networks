@@ -94,16 +94,16 @@ cd paper && pandoc paper.md \
 
 ## Citing
 
-> Usman, R. M. (2026). *AI-Agent Populations Reveal Engagement Signals
-> Suppress Minority Views and Coordination Beats Amplification.* (Working paper.)
+> Usman, R. M. (2026). *Peer-Voted AI-Agent Populations Reveal Engagement Signals
+> Suppress Minority Views and Coordination Outperforms Amplification.* (Working paper.)
 
 BibTeX:
 
 ```bibtex
 @misc{usman2026synthetic,
   author = {Usman, Rana Muhammad},
-  title  = {AI-Agent Populations Reveal Engagement Signals Suppress
-            Minority Views and Coordination Beats Amplification},
+  title  = {Peer-Voted AI-Agent Populations Reveal Engagement Signals Suppress
+            Minority Views and Coordination Outperforms Amplification},
   year   = {2026},
   url    = {https://github.com/ranausmanai/synthetic-social-networks},
   note   = {Working paper; dataset at
