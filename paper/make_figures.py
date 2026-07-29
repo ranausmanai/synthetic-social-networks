@@ -6,9 +6,6 @@ Outputs to paper/figures/
 from __future__ import annotations
 
 import csv
-import json
-import os
-import statistics as stat
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -57,32 +54,35 @@ def fig_exp1_minority_survival() -> None:
     if not rows: return
 
     conditions = ["control", "likes", "majority", "leaderboard", "downvote"]
-    buckets = defaultdict(list)
-    for r in rows:
-        buckets[r["condition"]].append(float(r["minority_survival_rate"]))
+    blocks = defaultdict(dict)
+    for row in rows:
+        blocks[(row["model"], row["seed"])][row["condition"]] = float(
+            row["minority_survival_rate"]
+        )
 
-    means = [_mean_std(buckets[c])[0] for c in conditions]
-    stds = [_mean_std(buckets[c])[1] for c in conditions]
-    ns = [len(buckets[c]) for c in conditions]
-
-    fig, ax = plt.subplots(figsize=(7, 4.2))
-    colors = ["#555555", "#4C78A8", "#E45756", "#F2A541", "#8F6BB3"]
-    bars = ax.bar(conditions, means, yerr=stds, capsize=5,
-                  color=colors, edgecolor="black", linewidth=0.6)
-    # control reference line
-    ax.axhline(means[0], color="#444", linestyle="--", alpha=0.4, linewidth=1,
-               label=f"control mean ({means[0]:.2f})")
-    for bar, m, s in zip(bars, means, stds):
-        ax.text(bar.get_x() + bar.get_width()/2,
-                m + s + 0.015,
-                f"{m:.2f}",
-                ha="center", va="bottom", fontsize=8)
+    x = np.arange(len(conditions))
+    fig, ax = plt.subplots(figsize=(7.5, 4.4))
+    model_colors = {"qwen3.5:2b": "#4C78A8", "llama3.2:3b": "#F58518"}
+    shown = set()
+    for (model, _), values in sorted(blocks.items()):
+        y = [values[condition] for condition in conditions]
+        ax.plot(x, y, color=model_colors[model], alpha=0.32, linewidth=1)
+        label = model if model not in shown else None
+        ax.scatter(x, y, color=model_colors[model], s=30, alpha=0.8, label=label)
+        shown.add(model)
+    means = [
+        np.mean([values[condition] for values in blocks.values()])
+        for condition in conditions
+    ]
+    ax.plot(x, means, color="black", marker="D", linewidth=2, label="block mean")
     ax.set_ylabel("Minority-opinion survival rate")
     ax.set_xlabel("Feedback condition")
-    ax.set_title("EXP-1 — Minority-opinion survival under social-reward UX\n(mean ± SD; n=4 model×seed combinations per condition)")
+    ax.set_title("EXP-1 — Minority-opinion survival by model×seed block")
+    ax.set_xticks(x)
+    ax.set_xticklabels(conditions)
     ax.set_ylim(0, 1)
     ax.grid(axis="y", alpha=0.3)
-    ax.legend(loc="lower right", framealpha=0.9)
+    ax.legend(loc="lower left", framealpha=0.9, ncol=3, fontsize=8)
     plt.tight_layout()
     out = FIGDIR / "fig1_exp1_minority_survival.png"
     plt.savefig(out, dpi=160)
@@ -95,29 +95,37 @@ def fig_exp1_minority_survival() -> None:
 # =============================================================================
 
 def fig_exp2_dose_response() -> None:
-    rows = _load_csv(ROOT / "runs/20260524-015245_astroturf_exp2/astroturf_broadside_aggregated.csv")
+    rows = _load_csv(ROOT / "runs/20260524-015245_astroturf_exp2/astroturf_broadside_results.csv")
     if not rows: return
 
-    Ks = [int(r["K"]) for r in rows]
-    fb_mean = [float(r["final_broad_share_mean"]) for r in rows]
-    fb_std = [float(r["final_broad_share_std"]) for r in rows]
-    fs_mean = [float(r["final_strict_share_mean"]) for r in rows]
-    fs_std = [float(r["final_strict_share_std"]) for r in rows]
+    Ks = sorted({int(row["K"]) for row in rows})
+    blocks = defaultdict(dict)
+    for row in rows:
+        blocks[(row["model"], row["seed"])][int(row["K"])] = row
 
-    fig, ax = plt.subplots(figsize=(7, 4.2))
-    ax.errorbar(Ks, fb_mean, yerr=fb_std, marker="o", linewidth=2,
-                color="#4C78A8", capsize=4, label="Broad-side stance share (3 buckets)")
-    ax.errorbar(Ks, fs_mean, yerr=fs_std, marker="s", linewidth=2,
-                color="#E45756", capsize=4, label="Exact pushed-stance share")
-    ax.axhline(0.5, color="black", linestyle="--", alpha=0.5, linewidth=1, label="Majority threshold (0.50)")
-    ax.axvspan(15, 22, color="#F2A541", alpha=0.10, label="Highest tested coordination (K=20)")
-    ax.set_xlabel("K — number of coordinated AI accounts injected\n(honest population = 30 agents)")
-    ax.set_ylabel("Final honest-agent share adopting pushed opinion")
-    ax.set_title("EXP-2 — Honest-agent stance share by coordinated-account count\n(mean ± SD; n=4 model×seed combinations per K)")
-    ax.set_xticks(Ks)
-    ax.set_ylim(0, 0.7)
-    ax.grid(alpha=0.3)
-    ax.legend(loc="lower right", framealpha=0.95, fontsize=8)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.2), sharey=True)
+    panels = [
+        (axes[0], "delta_strict_share", "Exact pushed stance (preregistered)"),
+        (axes[1], "delta_broad_share", "Broad side (post-hoc)"),
+    ]
+    for ax, metric, title in panels:
+        for values in blocks.values():
+            y = [float(values[K][metric]) for K in Ks]
+            ax.plot(Ks, y, color="#7A7A7A", alpha=0.45, marker="o", linewidth=1)
+        mean = [
+            np.mean([float(values[K][metric]) for values in blocks.values()])
+            for K in Ks
+        ]
+        ax.plot(Ks, mean, color="#B22222", marker="D", linewidth=2.2,
+                label="block mean")
+        ax.axhline(0, color="black", linewidth=1, alpha=0.6)
+        ax.set_title(title)
+        ax.set_xlabel("K coordinated accounts")
+        ax.set_xticks(Ks)
+        ax.grid(alpha=0.3)
+    axes[0].set_ylabel("Change in honest-agent stance share")
+    axes[1].legend(framealpha=0.95, fontsize=8)
+    fig.suptitle("EXP-2 — Coordinated-account dose response with all four blocks")
     plt.tight_layout()
     out = FIGDIR / "fig2_exp2_dose_response.png"
     plt.savefig(out, dpi=160)
@@ -133,50 +141,32 @@ def fig_exp2_ecology() -> None:
     rows = _load_csv(ROOT / "runs/20260524-015245_astroturf_exp2/astroturf_results.csv")
     if not rows: return
 
-    # Need to load the per-trial scalar.json too — find them
-    K_to_scalars = defaultdict(list)
-    trial_root = ROOT / "runs/20260524-015245_astroturf_exp2"
-    for r in rows:
-        if "_error" in r: continue
-        model = r["model"].replace("/", "__").replace(":", "_")
-        K = int(r["K"])
-        seed = r["seed"]
-        path = trial_root / model / f"seed{seed}" / f"k{K:03d}" / "likes" / "metrics" / "scalar.json"
-        if path.exists():
-            with path.open() as f:
-                sc = json.load(f)
-            K_to_scalars[K].append(sc)
-
-    Ks_sorted = sorted(K_to_scalars.keys())
-    if not Ks_sorted: return
-
-    def metric_stats(key: str) -> tuple[list[float], list[float]]:
-        means, stds = [], []
-        for K in Ks_sorted:
-            vals = [float(s.get(key, 0.0)) for s in K_to_scalars[K]]
-            m, sd = _mean_std(vals)
-            means.append(m); stds.append(sd)
-        return means, stds
-
-    pairwise_m, pairwise_s = metric_stats("final_mean_pairwise_sim")
-    minor_m, minor_s = metric_stats("minority_survival_rate")
-    pers_m, pers_s = metric_stats("final_persona_retention")
-    coll_m, coll_s = metric_stats("persona_collapse_score")
+    Ks_sorted = sorted({int(row["K"]) for row in rows})
+    blocks = defaultdict(dict)
+    for row in rows:
+        blocks[(row["model"], row["seed"])][int(row["K"])] = row
 
     fig, axes = plt.subplots(2, 2, figsize=(10, 6.5))
     panels = [
-        (axes[0, 0], "Pairwise post similarity", pairwise_m, pairwise_s, "linguistic homogeneity"),
-        (axes[0, 1], "Minority-opinion survival", minor_m, minor_s, "minority view persistence"),
-        (axes[1, 0], "Persona retention", pers_m, pers_s, "in-persona writing"),
-        (axes[1, 1], "Composite collapse score", coll_m, coll_s, "higher = more collapse"),
+        (axes[0, 0], "baseline_final_mean_pairwise_sim", "Pairwise post similarity", "linguistic homogeneity"),
+        (axes[0, 1], "baseline_minority_survival_rate", "Minority-opinion survival", "minority view persistence"),
+        (axes[1, 0], "baseline_delta_majority_fraction", "Change in modal-stance share", "majority concentration"),
+        (axes[1, 1], "baseline_persona_collapse_score", "Composite collapse score", "higher = more collapse"),
     ]
-    for ax, title, m, s, sub in panels:
-        ax.errorbar(Ks_sorted, m, yerr=s, marker="o", linewidth=2, color="#4C78A8", capsize=3)
+    for ax, metric, title, sub in panels:
+        for values in blocks.values():
+            y = [float(values[K][metric]) for K in Ks_sorted]
+            ax.plot(Ks_sorted, y, color="#777777", alpha=0.42, marker="o", linewidth=1)
+        mean = [
+            np.mean([float(values[K][metric]) for values in blocks.values()])
+            for K in Ks_sorted
+        ]
+        ax.plot(Ks_sorted, mean, marker="D", linewidth=2.2, color="#4C78A8")
         ax.set_title(f"{title}\n({sub})", fontsize=10)
         ax.set_xlabel("K coordinated agents")
         ax.set_xticks(Ks_sorted)
         ax.grid(alpha=0.3)
-    fig.suptitle("EXP-2 — Information-ecology metrics by coordinated-account count",
+    fig.suptitle("EXP-2 — Information-ecology metrics with all four blocks",
                  fontsize=12, y=1.00)
     plt.tight_layout()
     out = FIGDIR / "fig3_exp2_ecology.png"
@@ -186,42 +176,39 @@ def fig_exp2_ecology() -> None:
 
 
 # =============================================================================
-# Figure 4 — EXP-6 intervention semantic-endorsement bar
+# Figure 4 — EXP-6 intervention thematic-similarity change
 # =============================================================================
 
 def fig_exp6_interventions() -> None:
-    rows = _load_csv(ROOT / "runs/20260524-225945_misinfo_exp6/misinfo_semantic_aggregated.csv")
+    rows = _load_csv(ROOT / "runs/20260524-225945_misinfo_exp6/misinfo_semantic_results.csv")
     if not rows: return
 
-    interventions = []
-    delta_mean, delta_std = [], []
-    for r in rows:
-        interventions.append(r["intervention"])
-        delta_mean.append(float(r["delta_similarity_mean"]))
-        delta_std.append(float(r["delta_similarity_std"]))
+    interventions = ["none", "factcheck_label", "deamplify", "rebuttal"]
+    blocks = defaultdict(dict)
+    for row in rows:
+        blocks[(row["model"], row["seed"])][row["intervention"]] = float(
+            row["delta_mean_similarity"]
+        )
 
+    x = np.arange(len(interventions))
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
-    colors = ["#7A7A7A", "#4C78A8", "#72A0C1", "#9E9E9E"]
-    bars = ax.bar(interventions, delta_mean, yerr=delta_std, capsize=5,
-                  color=colors, edgecolor="black", linewidth=0.6)
+    for values in blocks.values():
+        y = [values[intervention] for intervention in interventions]
+        ax.plot(x, y, color="#777777", alpha=0.45, marker="o", linewidth=1)
+    means = [
+        np.mean([values[intervention] for values in blocks.values()])
+        for intervention in interventions
+    ]
+    ax.plot(x, means, color="#4C78A8", marker="D", linewidth=2.2,
+            label="block mean")
     ax.axhline(0, color="black", linewidth=1, alpha=0.6)
-    for bar, m in zip(bars, delta_mean):
-        ax.text(bar.get_x() + bar.get_width()/2,
-                m + (0.005 if m >= 0 else -0.005),
-                f"{m:+.3f}",
-                ha="center",
-                va="bottom" if m >= 0 else "top",
-                fontsize=9)
     ax.set_ylabel("Δ semantic similarity to seeded claim (final − initial)\npost-hoc thematic metric; not stance-aware")
     ax.set_xlabel("Intervention regime")
-    ax.set_title("EXP-6 — Post-hoc semantic theme drift by intervention\n(mean ± SD; n=4 model×seed combinations per intervention)")
+    ax.set_title("EXP-6 — Thematic-similarity change with all four blocks")
+    ax.set_xticks(x)
+    ax.set_xticklabels(interventions)
     ax.grid(axis="y", alpha=0.3)
-    # Annotation about rebuttal caveat
-    ax.annotate("Similarity can increase when agents\nrefute the same thematic content",
-                xy=(3, delta_mean[3]),
-                xytext=(1.9, delta_mean[3] + 0.075),
-                arrowprops=dict(arrowstyle="->", alpha=0.5, color="gray"),
-                fontsize=8, color="gray", ha="left")
+    ax.legend(framealpha=0.95, fontsize=8)
     plt.tight_layout()
     out = FIGDIR / "fig4_exp6_interventions.png"
     plt.savefig(out, dpi=160)
@@ -242,28 +229,34 @@ def fig_exp3_influence() -> None:
     for r in rows:
         buckets[int(r["multiplier"])].append(r)
 
-    broad_m, broad_s = [], []
-    strict_m, strict_s = [], []
-    for m in mults:
-        broad_vals = [float(r["final_broad_share"]) for r in buckets[m]]
-        strict_vals = [float(r["final_strict_share"]) for r in buckets[m]]
-        bm, bsd = _mean_std(broad_vals); broad_m.append(bm); broad_s.append(bsd)
-        sm, ssd = _mean_std(strict_vals); strict_m.append(sm); strict_s.append(ssd)
+    blocks = defaultdict(dict)
+    for row in rows:
+        blocks[(row["model"], row["seed"])][int(row["multiplier"])] = row
 
-    fig, ax = plt.subplots(figsize=(7, 4.2))
-    ax.errorbar(mults, broad_m, yerr=broad_s, marker="o", linewidth=2,
-                color="#4C78A8", capsize=4, label="Broad-side share (3 buckets)")
-    ax.errorbar(mults, strict_m, yerr=strict_s, marker="s", linewidth=2,
-                color="#E45756", capsize=4, label="Exact pushed-stance share")
-    ax.axhline(0.5, color="black", linestyle="--", alpha=0.5, linewidth=1, label="Majority threshold")
-    ax.set_xlabel("Visibility multiplier of single influencer agent")
-    ax.set_ylabel("Final honest-agent share adopting pushed opinion")
-    ax.set_title("EXP-3 — Single-account visibility amplification\nNo monotonic dose-response (mean ± SD; n=4 per multiplier)")
-    ax.set_xticks(mults)
-    ax.set_xticklabels([f"{m}×" for m in mults])
-    ax.set_ylim(0, 0.7)
-    ax.grid(alpha=0.3)
-    ax.legend(loc="lower right", framealpha=0.95, fontsize=9)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.2))
+    panels = [
+        (axes[0], "delta_strict_share", "Change in exact pushed-stance share"),
+        (axes[1], "baseline_minority_survival_rate", "Minority-view survival"),
+    ]
+    for ax, metric, title in panels:
+        for values in blocks.values():
+            y = [float(values[m][metric]) for m in mults]
+            ax.plot(mults, y, color="#777777", alpha=0.45, marker="o", linewidth=1)
+        mean = [
+            np.mean([float(values[m][metric]) for values in blocks.values()])
+            for m in mults
+        ]
+        ax.plot(mults, mean, color="#4C78A8", marker="D", linewidth=2.2,
+                label="block mean")
+        ax.set_title(title)
+        ax.set_xlabel("Visibility multiplier")
+        ax.set_xticks(mults)
+        ax.set_xticklabels([f"{m}×" for m in mults])
+        ax.grid(alpha=0.3)
+    axes[0].axhline(0, color="black", linewidth=1, alpha=0.6)
+    axes[1].set_ylim(0, 1)
+    axes[1].legend(framealpha=0.95, fontsize=8)
+    fig.suptitle("EXP-3 — One-account rank amplification with all four blocks")
     plt.tight_layout()
     out = FIGDIR / "fig5_exp3_influence.png"
     plt.savefig(out, dpi=160)
@@ -292,22 +285,35 @@ def fig_cross_model() -> None:
     fig, ax = plt.subplots(figsize=(8, 4.5))
     color_map = {"qwen3.5:2b": "#4C78A8", "llama3.2:3b": "#F58518"}
     for i, model in enumerate(models):
-        means, stds = [], []
+        means = []
         for intv in interventions:
             vals = buckets.get((model, intv), [])
-            m, sd = _mean_std(vals)
-            means.append(m); stds.append(sd)
+            means.append(float(np.mean(vals)))
         offset = (i - (len(models) - 1)/2) * width
-        ax.bar(x + offset, means, width=width*0.95, yerr=stds, capsize=4,
-               color=color_map.get(model, f"C{i}"), edgecolor="black", linewidth=0.6,
-               label=model)
+        for j, intv in enumerate(interventions):
+            vals = buckets.get((model, intv), [])
+            jitter = np.linspace(-0.045, 0.045, len(vals))
+            ax.scatter(
+                np.full(len(vals), x[j] + offset) + jitter,
+                vals,
+                color=color_map.get(model, f"C{i}"),
+                alpha=0.65,
+                s=34,
+            )
+        ax.plot(
+            x + offset,
+            means,
+            color=color_map.get(model, f"C{i}"),
+            marker="D",
+            linewidth=1.8,
+            label=model,
+        )
     ax.axhline(0, color="black", linewidth=1, alpha=0.6)
     ax.set_xticks(x)
     ax.set_xticklabels(interventions)
     ax.set_ylabel("Δ semantic similarity to seeded claim\n(post-hoc thematic metric; not stance-aware)")
     ax.set_xlabel("Intervention")
-    ax.set_title("EXP-6 — Semantic theme drift differs across two tested models\n"
-                 "(n=2 seeds per model and intervention)")
+    ax.set_title("EXP-6 — Thematic-similarity drift by model and seed")
     ax.grid(axis="y", alpha=0.3)
     ax.legend(framealpha=0.95, fontsize=9)
     plt.tight_layout()
@@ -322,33 +328,172 @@ def fig_cross_model() -> None:
 # =============================================================================
 
 def fig_anchor() -> None:
-    rows = _load_csv(ROOT / "runs/20260525-213406_anchor_a1/anchor_aggregated.csv")
+    rows = _load_csv(ROOT / "runs/20260525-213406_anchor_a1/anchor_results.csv")
     if not rows: return
 
     fig, ax = plt.subplots(figsize=(7.5, 4.4))
-    HUMAN_LO, HUMAN_HI = 0.10, 0.20
-    ax.axhspan(HUMAN_LO, HUMAN_HI, color="#54A24B", alpha=0.18,
-               label=f"Derived human reference band ({HUMAN_LO:.0%}–{HUMAN_HI:.0%})\n"
-                     "(constructed from Salganik et al. 2006; Muchnik et al. 2013)")
     color_map = {"qwen3.5:2b": "#4C78A8", "llama3.2:3b": "#F58518"}
-    for model in sorted({r["model"] for r in rows}):
+    rng = np.random.default_rng(20260729)
+    for index, model in enumerate(sorted({r["model"] for r in rows})):
         mrows = [r for r in rows if r["model"] == model]
-        xs = [float(r["claimed_majority"]) for r in mrows]
-        ys = [float(r["conform_rate_mean"]) for r in mrows]
-        es = [float(r["conform_rate_std"]) for r in mrows]
-        ax.errorbar(xs, ys, yerr=es, marker="o", capsize=4, linewidth=2,
-                    color=color_map.get(model), label=model)
-    ax.set_xlabel("Claimed majority strength shown to agents")
+        ys = [float(row["conform_rate"]) for row in mrows]
+        xs = index + rng.uniform(-0.12, 0.12, len(ys))
+        ax.scatter(xs, ys, color=color_map[model], alpha=0.55, s=28)
+        shifted = sum(int(row["n_shifted"]) for row in mrows)
+        total = sum(int(row["n_minority"]) for row in mrows)
+        rate = shifted / total
+        ax.scatter(index, rate, color="black", marker="D", s=55, zorder=4)
+        ax.text(index, max(ys + [rate]) + 0.012, f"{shifted}/{total}",
+                ha="center", va="bottom", fontsize=9)
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels(sorted({r["model"] for r in rows}))
+    ax.set_xlabel("Generation model")
     ax.set_ylabel("Conform rate (minority → majority shift)")
-    ax.set_title("A1 — One-shot bandwagon conformity\n"
-                 "Pooled agent rate 0.039 versus derived 0.10–0.20 human reference band")
-    ax.set_xlim(0.5, 0.95)
-    ax.set_ylim(-0.02, 0.32)
+    ax.set_title("A1 — One-shot majority-cue response by model\n"
+                 "trial rates with pooled model means")
+    ax.set_xlim(-0.5, 1.5)
+    ax.set_ylim(-0.02, 0.30)
     ax.grid(alpha=0.3)
-    ax.legend(loc="upper right", framealpha=0.95, fontsize=9)
     plt.tight_layout()
     out = FIGDIR / "fig7_anchor_calibration.png"
     plt.savefig(out, dpi=160)
+    plt.close()
+    print(f"saved {out}")
+
+
+# =============================================================================
+# Figures 8–9 — Preregistered matched-exposure confirmation
+# =============================================================================
+
+def _confirmatory_headlines() -> list[tuple[str, str, list[dict]]]:
+    panels = [
+        ("v1_core", "Core families (4B–8B)"),
+        ("v1_size_extension", "Larger variants (9B–14B)"),
+    ]
+    return [
+        (run, title, _load_csv(
+            ROOT / "runs_confirmatory" / run / "confirmatory_analysis.csv"
+        ))
+        for run, title in panels
+    ]
+
+
+def fig_confirmatory_overall() -> None:
+    panels = _confirmatory_headlines()
+    outcomes = [
+        ("pdi_distributed_minus_single", "delta_alignment",
+         "Distributed minus single source\npushed-direction change"),
+        ("engagement_likes_minus_control", "opposite_side_survival",
+         "Peer-ranked feed minus topic-only\nopposite-side survival"),
+        ("engagement_likes_minus_control", "final_honest_pairwise_similarity",
+         "Peer-ranked feed minus topic-only\nfinal-post TF-IDF similarity"),
+    ]
+    colors = ["#4C78A8", "#E45756"]
+    fig, axes = plt.subplots(1, 3, figsize=(11, 4.3))
+    for ax, (contrast, metric, title) in zip(axes, outcomes):
+        selected = []
+        for _, panel_title, rows in panels:
+            row = next(
+                item for item in rows
+                if item["contrast"] == contrast
+                and item["metric"] == metric
+                and item["stratum_type"] == "overall"
+            )
+            selected.append((panel_title, row))
+        y = np.arange(len(selected))[::-1]
+        for index, ((label, row), ypos) in enumerate(zip(selected, y)):
+            mean = float(row["mean_difference"])
+            low = float(row["ci95_low"])
+            high = float(row["ci95_high"])
+            ax.errorbar(
+                mean, ypos, xerr=[[mean - low], [high - mean]],
+                fmt="o", color=colors[index], capsize=4, markersize=7,
+                linewidth=2, label=label,
+            )
+        ax.axvline(0, color="black", linewidth=0.9)
+        ax.set_yticks(y)
+        ax.set_yticklabels([label for label, _ in selected], fontsize=13)
+        ax.tick_params(axis="x", labelsize=12)
+        ax.set_title(title, fontsize=14)
+        ax.set_xlabel("Paired block difference", fontsize=13)
+        ax.grid(axis="x", alpha=0.25)
+    fig.suptitle(
+        "Preregistered confirmatory effects with 95% block-bootstrap intervals",
+        y=1.02, fontsize=16,
+    )
+    plt.tight_layout()
+    out = FIGDIR / "fig8_confirmatory_overall.png"
+    plt.savefig(out, dpi=200, bbox_inches="tight")
+    plt.close()
+    print(f"saved {out}")
+
+
+def fig_confirmatory_models() -> None:
+    panels = [
+        (run, title) for run, title, _ in _confirmatory_headlines()
+    ]
+    outcomes = [
+        ("pdi_distributed_minus_single", "delta_alignment",
+         "Distributed minus single\npushed-direction change"),
+        ("engagement_likes_minus_control", "opposite_side_survival",
+         "Peer-ranked feed minus topic-only\nopposite-side survival"),
+        ("engagement_likes_minus_control", "final_honest_pairwise_similarity",
+         "Peer-ranked feed minus topic-only\nfinal-post TF-IDF similarity"),
+    ]
+    colors = ["#4C78A8", "#E45756", "#54A24B", "#B279A2"]
+    fig, axes = plt.subplots(2, 3, figsize=(12, 10.5))
+    for row_index, (run, panel_title) in enumerate(panels):
+        rows = _load_csv(
+            ROOT / "runs_confirmatory" / run / "confirmatory_analysis.csv"
+        )
+        for col_index, (contrast, metric, title) in enumerate(outcomes):
+            ax = axes[row_index, col_index]
+            model_rows = [
+                row for row in rows
+                if row["contrast"] == contrast
+                and row["metric"] == metric
+                and row["stratum_type"] == "model"
+            ]
+            overall = next(
+                row for row in rows
+                if row["contrast"] == contrast
+                and row["metric"] == metric
+                and row["stratum_type"] == "overall"
+            )
+            labels = [row["stratum"].replace("ministral-3", "ministral3")
+                      for row in model_rows]
+            means = np.asarray([float(row["mean_difference"]) for row in model_rows])
+            low = np.asarray([float(row["ci95_low"]) for row in model_rows])
+            high = np.asarray([float(row["ci95_high"]) for row in model_rows])
+            y = np.arange(len(model_rows))
+            ax.errorbar(
+                means, y, xerr=np.vstack((means - low, high - means)),
+                fmt="o", color=colors[col_index], capsize=3, markersize=5,
+            )
+            overall_mean = float(overall["mean_difference"])
+            ax.axvline(0, color="black", linewidth=0.8)
+            ax.axvline(overall_mean, color=colors[col_index], linewidth=1.4,
+                       linestyle="--", alpha=0.8)
+            ax.set_yticks(y)
+            ax.set_yticklabels(
+                labels if col_index == 0 else [], fontsize=12
+            )
+            ax.tick_params(axis="x", labelsize=11)
+            ax.grid(axis="x", alpha=0.25)
+            ax.set_title(title if row_index == 0 else "")
+            if col_index == 0:
+                ax.set_ylabel(panel_title, fontsize=13)
+            ax.set_xlabel(
+                f"Paired difference\npooled {overall_mean:+.3f}", fontsize=12
+            )
+    fig.suptitle(
+        "Preregistered confirmatory contrasts by model variant\n"
+        "points are model means; bars are 95% block-bootstrap intervals",
+        y=0.995, fontsize=16,
+    )
+    plt.tight_layout(rect=(0, 0, 1, 0.95), h_pad=3.2, w_pad=1.6)
+    out = FIGDIR / "fig9_confirmatory_models.png"
+    plt.savefig(out, dpi=180)
     plt.close()
     print(f"saved {out}")
 
@@ -361,4 +506,6 @@ if __name__ == "__main__":
     fig_exp3_influence()
     fig_cross_model()
     fig_anchor()
+    fig_confirmatory_overall()
+    fig_confirmatory_models()
     print(f"\nAll figures saved to {FIGDIR}/")

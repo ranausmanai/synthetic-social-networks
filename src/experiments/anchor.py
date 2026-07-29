@@ -1,12 +1,12 @@
-"""ANCHOR A1 — Bandwagon-effect conformity calibration.
+"""A1 one-shot majority-cue response diagnostic.
 
-Reproduces a documented human conformity result in our sim. Setup:
+Setup:
   - N agents initialized with a binary stance, evenly split 50/50
   - Each agent is shown a synthetic 'feed' claiming X% of platform supports
     the opposite of their stance
   - Measure: what fraction shift toward the claimed majority after one round?
 
-Reference human numbers we anchor against:
+Prior studies that motivated the cue:
   - Asch (1956) line-conformity: ~37 % of human responses conform to a unanimous
     incorrect majority. (Not directly comparable — line-judgement task — but
     establishes that humans conform even when wrong.)
@@ -18,8 +18,9 @@ Reference human numbers we anchor against:
     polarization 2-3x, with bottom-quartile songs gaining ~10-15 % share when
     artificially marked "popular".
 
-We treat 10-20 % per-round shift as the credible human band for one-shot
-bandwagon exposure. If our sim falls inside that band, anchor passes.
+The 10-20% range in the original implementation was an author-derived
+comparison band, not a like-for-like human benchmark. It is retained in the
+output schema for reproducibility but must not be interpreted as calibration.
 """
 from __future__ import annotations
 
@@ -36,7 +37,7 @@ from ..agents import Agent, PERSONAS, ask_agent
 from ..llm import LLMConfig, OllamaClient
 
 
-# Documented human bandwagon range (single-exposure conformity)
+# Historical author-derived comparison band; not a validated human benchmark.
 HUMAN_BAND_LOW = 0.10
 HUMAN_BAND_HIGH = 0.20
 
@@ -307,10 +308,10 @@ def _aggregate_and_report(out_root: Path, rows: list[dict[str, Any]]) -> None:
             es = [r["conform_rate_std"] for r in rows_m]
             plt.errorbar(xs, ys, yerr=es, marker="o", label=model, capsize=3)
         plt.axhspan(HUMAN_BAND_LOW, HUMAN_BAND_HIGH, color="green", alpha=0.18,
-                    label=f"Documented human band [{HUMAN_BAND_LOW:.0%}-{HUMAN_BAND_HIGH:.0%}]")
+                    label=f"Historical comparison band [{HUMAN_BAND_LOW:.0%}-{HUMAN_BAND_HIGH:.0%}]")
         plt.xlabel("Claimed majority fraction shown to agents")
         plt.ylabel("Per-round bandwagon shift rate (minority → majority)")
-        plt.title("Bandwagon-effect calibration vs human reference range")
+        plt.title("One-shot majority-cue response (historical comparison band)")
         plt.legend(fontsize=9)
         plt.grid(alpha=0.3)
         plt.tight_layout()
@@ -320,13 +321,12 @@ def _aggregate_and_report(out_root: Path, rows: list[dict[str, Any]]) -> None:
         pass
 
     # report
-    lines = ["# ANCHOR A1 — Bandwagon-effect calibration\n"]
-    lines.append("**Question:** Does our sim reproduce documented human bandwagon "
-                 "conformity rates? If yes, we've earned the right to make new "
-                 "quantitative claims about manipulation under conditions humans "
-                 "haven't been tested in.\n")
-    lines.append(f"**Human reference band:** {HUMAN_BAND_LOW:.0%}–{HUMAN_BAND_HIGH:.0%} "
-                 "per-round shift (Salganik 2006, Muchnik 2013).\n")
+    lines = ["# A1 — One-shot majority-cue response diagnostic\n"]
+    lines.append("**Question:** How often do initially disagreeing agents shift "
+                 "after a synthetic majority cue?\n")
+    lines.append(f"**Historical comparison band:** {HUMAN_BAND_LOW:.0%}–"
+                 f"{HUMAN_BAND_HIGH:.0%}. This author-derived range is retained "
+                 "for schema compatibility and is not a human calibration.\n")
     lines.append("## Results (per model × claimed majority)\n")
     lines.append("| Model | Claimed maj. | n trials | Conform rate (mean ± std) | In human band? |")
     lines.append("|---|---|---|---|---|")
@@ -339,17 +339,8 @@ def _aggregate_and_report(out_root: Path, rows: list[dict[str, Any]]) -> None:
     lines.append("\n![anchor_vs_human](plots/anchor_vs_human.png)\n")
     lines.append("## Interpretation\n")
     lines.append(
-        "Trials within the green band on the plot reproduce the documented "
-        "human single-round bandwagon shift rate. If our sim consistently lands "
-        "inside or near this band, we have a credible methodological anchor — "
-        "the sim's conformity dynamics are *at least roughly comparable* to "
-        "humans, so per-round shift rates from our other experiments can be "
-        "interpreted as plausible lower-bound estimates of human dynamics.\n\n"
-        "If the sim is consistently below the band, our agents are *more "
-        "stubborn* than humans → our headline numbers (e.g. astroturfing K\\*) "
-        "should be treated as conservative; real human platforms would flip at "
-        "smaller K.\n\nIf the sim is consistently above the band, our agents "
-        "are *more conformist* → we downgrade headline claims and report only "
-        "rankings of conditions, not absolute thresholds.\n"
+        "Interpret response rates by model. The historical band is descriptive "
+        "only; neither agreement nor disagreement with it establishes human "
+        "fidelity or licenses lower-bound claims for other experiments.\n"
     )
     (out_root / "report.md").write_text("\n".join(lines))

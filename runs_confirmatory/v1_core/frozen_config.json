@@ -1,0 +1,60 @@
+{
+  "protocol_id": "pv_sst_confirmatory_v1",
+  "ollama_url": "http://127.0.0.1:11434",
+  "output_dir": "runs_confirmatory",
+  "models": [
+    "qwen3.5:4b",
+    "gemma4:e4b",
+    "ministral-3:8b",
+    "granite4:3b"
+  ],
+  "seeds": [
+    101,
+    211,
+    307,
+    419
+  ],
+  "topics": [
+    {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    }
+  ],
+  "conditions": [
+    "control",
+    "likes",
+    "single_source",
+    "distributed_sources"
+  ],
+  "num_honest_agents": 12,
+  "num_distributed_sources": 4,
+  "num_rounds": 6,
+  "feed_size": 5,
+  "voting_k_per_voter": 5,
+  "parallel_requests": 4,
+  "temperature": 0.8,
+  "max_tokens": 120,
+  "vote_max_tokens": 70,
+  "request_timeout": 240,
+  "post_char_limit": 180
+}

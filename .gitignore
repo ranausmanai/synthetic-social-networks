@@ -19,8 +19,15 @@ Thumbs.db
 # Experiment outputs (released separately on Hugging Face — see README.md)
 # Production posts + per-trial logs + embedding cache are all on HF.
 runs/
+logs/
+build/
+tmp/
+runs_confirmatory/
 run_logs/
 pod_artifacts/
+
+# Superseded confirmatory figure retained locally only.
+paper/figures/fig8_confirmatory.png
 
 # Drafts not for public release
 CLAUDE.md

@@ -4,9 +4,9 @@ completed astroturf sweep's raw posts.jsonl logs.
 Strict: honest agents holding EXACTLY the pushed stance bucket (1 of 7).
 Broad:  honest agents on the same SIDE as the pushed stance (3 of 7 buckets).
 
-Both metrics are direction-of-opinion measures committed in PREREGISTRATION.md.
-This is not p-hacking — both definitions were available from the start; we just
-hadn't computed the broader one in the original runner.
+The exact-bucket metric is preregistered. The broader side-level aggregation
+was computed after inspecting the strict result and must be reported as
+post-hoc.
 
 Usage:
     python -m src.analyze_astroturf runs/<sweep-dir>

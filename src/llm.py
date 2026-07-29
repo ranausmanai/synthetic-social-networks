@@ -17,6 +17,7 @@ class LLMConfig:
     temperature: float = 0.8
     max_tokens: int = 220
     request_timeout: int = 120
+    seed: Optional[int] = None
 
 
 class OllamaClient:
@@ -26,6 +27,13 @@ class OllamaClient:
 
     def generate(self, prompt: str, system: Optional[str] = None,
                  json_mode: bool = False, temperature: Optional[float] = None) -> str:
+        options: dict[str, Any] = {
+            "temperature": temperature if temperature is not None else self.cfg.temperature,
+            "num_predict": self.cfg.max_tokens,
+        }
+        if self.cfg.seed is not None:
+            options["seed"] = int(self.cfg.seed)
+
         payload: dict[str, Any] = {
             "model": self.cfg.model,
             "prompt": prompt,
@@ -35,10 +43,7 @@ class OllamaClient:
             # `response` comes back empty until the model "decides" to answer,
             # which can blow through num_predict before anything is emitted.
             "think": False,
-            "options": {
-                "temperature": temperature if temperature is not None else self.cfg.temperature,
-                "num_predict": self.cfg.max_tokens,
-            },
+            "options": options,
         }
         if system:
             payload["system"] = system

@@ -1,0 +1,2818 @@
+[
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "ai_labels",
+      "question": "Should AI-generated content be labeled on social platforms?",
+      "support_angle": "Automatic labels protect users and make provenance visible.",
+      "oppose_angle": "Mandatory labels are unreliable, stigmatize legitimate tools, and burden smaller creators."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "identity_verification",
+      "question": "Should social platforms require identity verification before an account can reach a large audience?",
+      "support_angle": "Identity verification creates accountability for accounts with substantial reach.",
+      "oppose_angle": "Identity requirements endanger vulnerable speakers and entrench platform control."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "chronological_default",
+      "question": "Should social platforms make chronological feeds the default instead of algorithmic ranking?",
+      "support_angle": "Chronological defaults give users predictable control over what they see.",
+      "oppose_angle": "Algorithmic ranking helps users find relevant material and keeps smaller communities visible."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "gemma4:e4b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "ministral-3:8b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 101,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 211,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 307,
+    "condition": "distributed_sources"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "control"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "likes"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "single_source"
+  },
+  {
+    "model": "granite4:3b",
+    "topic": {
+      "id": "political_ad_targeting",
+      "question": "Should social platforms prohibit personalized targeting of political advertisements?",
+      "support_angle": "A targeting ban limits invisible manipulation and makes political persuasion auditable.",
+      "oppose_angle": "A targeting ban blocks legitimate outreach and favors campaigns that can afford mass media."
+    },
+    "seed": 419,
+    "condition": "distributed_sources"
+  }
+]
