@@ -33,46 +33,38 @@ contains 59,776 production posts across 528 production trials.
 
 ## TL;DR of the study
 
-The initial four threat-model probes use two small models and one topic. A
-separate confirmation adds four topics, four unused seeds, four current model
-families, and three larger variants:
+The primary evidence is a separately frozen 448-trial confirmation spanning
+four topics, four unused seeds, four open-weight model families, and three
+prespecified larger variants:
 
-1. **Engagement probe (EXP-1).** Likes increase linguistic similarity in all
-   four blocks. Minority-survival means decline under all four engagement
-   treatments, but the paired evidence is inconsistent and does not support
-   a general suppression claim.
-2. **Coordination probe (EXP-2).** At K=20, exact pushed-stance movement,
-   linguistic similarity, modal-stance concentration, and a preregistered
-   collapse score shift in the same direction in all four blocks. The sample
-   does not establish a takeover threshold.
-3. **Amplification probe (EXP-3).** Increasing one account's rank does not
-   increase adoption of its pushed stance. Minority-view survival has a
-   negative within-block slope, but condition means are noisy. EXP-2 and
-   EXP-3 are not exposure-matched and cannot establish that coordination
-   outperforms amplification.
-4. **Measurement audit (EXP-6).** An all-keyword detector misses close
-   restatements, while polarity-blind embedding similarity conflates
-   endorsement and rebuttal. We call these failures paraphrase leakage and
-   stance confounding. Two independent LLM stance judges agree on only 43.6%
-   of endpoint labels (kappa=0.258), so intervention effectiveness remains
-   unresolved.
-5. **Response diagnostic (A1).** One-shot majority-cue response differs
-   sharply by model (0/180 shifts for llama3.2:3b; 14/180 for qwen3.5:2b).
-   A1 is not a human calibration.
-6. **Matched-exposure confirmation.** Relative to a topic-only control, a
-   peer feed ranked by peer-generated likes increases final-post TF-IDF
-   similarity in both model-size panels. This contrast bundles peer exposure
-   and ranking. Minority-view survival falls in the core panel but not
-   conclusively in larger variants. Distributed sources do not reliably
-   outperform one equally exposed source, so the preregistered
+1. **Feed-induced lexical convergence.** Relative to a topic-only control, a
+   feed of prior peer posts ranked by peer-generated likes increases
+   final-post TF-IDF similarity in both model-size panels. The contrast
+   bundles peer exposure with ranking and does not identify ranking alone.
+2. **No reliable matched-exposure advantage for distributed sources.** Four
+   distributed sources do not reliably move stance more than one source when
+   adversarial impressions are held fixed. The preregistered
    population-driven-influence criterion fails.
+3. **Substantial model heterogeneity.** Minority-view survival falls in the
+   four-family core panel but not conclusively in the larger variants. The
+   result does not support a model-general suppression law.
+4. **Measurement warning from the exploratory stage.** An all-keyword
+   detector misses close restatements, while polarity-blind embedding
+   similarity conflates endorsement and rebuttal. We call these failures
+   paraphrase leakage and stance confounding. Two independent LLM stance
+   judges agree on only 43.6% of endpoint labels (kappa=0.258), so exploratory
+   misinformation-intervention effectiveness remains unresolved.
+
+The earlier two-model, one-topic stage generated the confirmatory questions
+and remains available for provenance. Its small cells and unmatched attack
+mechanisms are not used as confirmatory evidence.
 
 Full details: `paper/paper.pdf`.
 
 ## Dataset
 
 The complete raw experimental outputs — every in-character agent post, every
-peer vote with rationale, all per-trial metrics, all per-experiment configs —
+peer-vote record, all per-trial metrics, and all per-experiment configs —
 are released on Hugging Face:
 
 [`ranausmans/synthetic-social-networks`](https://huggingface.co/datasets/ranausmans/synthetic-social-networks)
@@ -114,18 +106,18 @@ cd paper && pandoc paper.md \
 
 ## Citing
 
-> Usman, R. M. (2026). *Peer-Voted LLM-Agent Stress Tests Show Ranked Feeds
-> Converge Discourse but Coordination Gains No General Advantage Under
-> Matched Exposure.* (Working paper.)
+> Usman, R. M. (2026). *Peer-Voted LLM-Agent Stress Tests Find Feed-Induced
+> Lexical Convergence but No Reliable Matched-Exposure Advantage for
+> Distributed Sources.* (Working paper.)
 
 BibTeX:
 
 ```bibtex
 @misc{usman2026synthetic,
   author = {Usman, Rana Muhammad},
-  title  = {Peer-Voted LLM-Agent Stress Tests Show Ranked Feeds Converge
-            Discourse but Coordination Gains No General Advantage Under
-            Matched Exposure},
+  title  = {Peer-Voted LLM-Agent Stress Tests Find Feed-Induced Lexical
+            Convergence but No Reliable Matched-Exposure Advantage for
+            Distributed Sources},
   year   = {2026},
   url    = {https://github.com/ranausmanai/synthetic-social-networks},
   note   = {Working paper; dataset at
